@@ -14,5 +14,10 @@ namespace Animeteka
         public string GenreName { get; set; }
 
         public virtual ICollection<AnimeAndGenre> AnimeAndGenre { get; set; }
+
+        public override string ToString()
+        {
+            return GenreName;
+        }
     }
 }

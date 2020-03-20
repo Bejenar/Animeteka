@@ -14,5 +14,10 @@ namespace Animeteka
         public string AtypeName { get; set; }
 
         public virtual ICollection<Anime> Anime { get; set; }
+
+        public override string ToString()
+        {
+            return AtypeName;
+        }
     }
 }
