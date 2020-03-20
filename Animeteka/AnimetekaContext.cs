@@ -204,10 +204,10 @@ namespace Animeteka
                     .ValueGeneratedOnAdd();
 
                 entity.Property(e => e.AtypeName)
-                    .IsRequired()
+                    .IsRequired(true)
                     .HasColumnName("atype_name")
                     .HasMaxLength(255)
-                    .IsUnicode(false);
+                    .IsUnicode(true);
             });
 
             modelBuilder.Entity<AnimeView>(entity =>
