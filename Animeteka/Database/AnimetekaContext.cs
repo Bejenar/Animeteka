@@ -1,11 +1,15 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.Extensions.Logging;
 
 namespace Animeteka
 {
     public partial class AnimetekaContext : DbContext
     {
+        public static readonly ILoggerFactory MyLoggerFactory
+            = LoggerFactory.Create(builder => { builder.AddConsole(); });
+
         public AnimetekaContext()
         {
         }
@@ -37,7 +41,9 @@ namespace Animeteka
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-RACB3J8\\SQLEXPRESS;Initial Catalog=Animeteka;Integrated Security=True");
+                optionsBuilder
+                    .UseLoggerFactory(MyLoggerFactory)
+                    .UseSqlServer("Data Source=DESKTOP-RACB3J8\\SQLEXPRESS;Initial Catalog=Animeteka;Integrated Security=True");
             }
         }
 
