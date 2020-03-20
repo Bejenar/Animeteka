@@ -35,9 +35,12 @@ namespace Animeteka
                 .Where(y => (atype.Text.Trim(new char[] { ' ' }) == "") ? true : y.Atype.AtypeName == atype.Text)
                 .ToList();
 
+
+
+
             int i = 1;
             foreach (var a in result)
-            {
+            { 
                 textBox1.Text += i++ + ". " + a.AnimeName + " [" + a.Atype.AtypeName + "]\r\n";
 
             }
