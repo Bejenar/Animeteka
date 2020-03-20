@@ -13,7 +13,7 @@ namespace Animeteka
             InitializeComponent();
 
             // TODO: temporary fix of first query slowness issue 
-            var cache = Program.db.Characters.AsNoTracking().ToList();
+            var cache = Program.db.Characters.ToList();
         }
 
         private void Form1_Load(object sender, EventArgs e)
