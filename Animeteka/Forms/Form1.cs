@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,12 +8,12 @@ namespace Animeteka
 {
     public partial class Form1 : Form
     {
-        AnimetekaContext db;
-
         public Form1()
         {
             InitializeComponent();
-            db = new AnimetekaContext();
+
+            // TODO: temporary fix of first query slowness issue 
+            var cache = Program.db.Characters.AsNoTracking().ToList();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -30,9 +25,9 @@ namespace Animeteka
         {
             textBox1.Text = "";
 
-            var result = db.Anime
-                .Include(u => u.Atype)
+            var result = Program.db.Anime
                 .Where(y => (atype.Text.Trim(new char[] { ' ' }) == "") ? true : y.Atype.AtypeName == atype.Text)
+                .Select(s => new {s.AnimeName, s.Atype.AtypeName })
                 .ToList();
 
 
@@ -41,7 +36,7 @@ namespace Animeteka
             int i = 1;
             foreach (var a in result)
             { 
-                textBox1.Text += i++ + ". " + a.AnimeName + " [" + a.Atype.AtypeName + "]\r\n";
+                textBox1.Text += i++ + ". " + a.AnimeName + " [" + a.AtypeName + "]\r\n";
 
             }
         }
