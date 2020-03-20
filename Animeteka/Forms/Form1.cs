@@ -28,7 +28,6 @@ namespace Animeteka
             foreach (var a in result)
             { 
                 textBox1.Text += i++ + ". " + a.AnimeName + " [" + a.AtypeName + "]\r\n";
-
             }
         }
     }
