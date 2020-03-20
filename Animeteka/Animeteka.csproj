@@ -162,6 +162,12 @@
     <Compile Include="Database\Entities\CharacterAnime.cs" />
     <Compile Include="Database\Entities\Characters.cs" />
     <Compile Include="Database\Other\Events.cs" />
+    <Compile Include="Forms\AdvancedSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdvancedSearch.Designer.cs">
+      <DependentUpon>AdvancedSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Database\Entities\Roles.cs" />
     <Compile Include="Database\Entities\Studio.cs" />
+    <EmbeddedResource Include="Forms\AdvancedSearch.resx">
+      <DependentUpon>AdvancedSearch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
