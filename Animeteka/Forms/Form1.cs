@@ -13,10 +13,7 @@ namespace Animeteka
             InitializeComponent();     
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
+        private void Form1_Load(object sender, EventArgs e){}
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -27,9 +24,6 @@ namespace Animeteka
                 .Select(s => new {s.AnimeName, s.Atype.AtypeName })
                 .ToList();
 
-
-
-
             int i = 1;
             foreach (var a in result)
             { 
@@ -37,8 +31,5 @@ namespace Animeteka
 
             }
         }
-
-
-
     }
 }
