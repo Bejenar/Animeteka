@@ -10,10 +10,7 @@ namespace Animeteka
     {
         public Form1()
         {
-            InitializeComponent();
-
-            // TODO: temporary fix of first query slowness issue 
-            var cache = Program.db.Characters.ToList();
+            InitializeComponent();     
         }
 
         private void Form1_Load(object sender, EventArgs e)

@@ -307,19 +307,19 @@
     <value>17, 17</value>
   </metadata>
   <data name="русскийToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>119, 22</value>
   </data>
   <data name="русскийToolStripMenuItem.Text" xml:space="preserve">
     <value>Русский</value>
   </data>
   <data name="английскийToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>119, 22</value>
   </data>
   <data name="английскийToolStripMenuItem.Text" xml:space="preserve">
     <value>English</value>
   </data>
   <data name="языкToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>101, 22</value>
   </data>
   <data name="языкToolStripMenuItem.Text" xml:space="preserve">
     <value>Язык</value>

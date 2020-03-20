@@ -14,6 +14,9 @@ namespace Animeteka.Forms
     {
         public WelcomePage()
         {
+            // TODO: temporary fix of first query slowness issue 
+            var cache = Program.db.Characters.ToList();
+
             InitializeComponent();
         }
 
@@ -37,7 +40,7 @@ namespace Animeteka.Forms
 
         private void button_advanced_Click(object sender, EventArgs e)
         {
-            var frm = new Form1();
+            var frm = new AdvancedSearch();
             frm.Location = this.Location;
             frm.StartPosition = FormStartPosition.Manual;
             frm.FormClosing += delegate { this.Show(); };
