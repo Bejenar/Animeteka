@@ -29,22 +29,60 @@ namespace Animeteka.Forms
             {
                 Genre.Items.Add(g);
             }
+
+            // populate studio filter
+            var studios = Program.db.Studio.ToList();
+            foreach(var s in studios)
+            {
+                Studio.Items.Add(s);
+            }
         }
 
         private void button_search_Click(object sender, EventArgs e)
         {
+            var atitle = searchBox.Text;
             var atype = (AnimeType)Type.SelectedItem;
+            var astudio = (Studio)Studio.SelectedItem;
+
+            var agenres = Genre.SelectedItems;
+
 
             var result = Program.db.Anime
-                .Where(y => (atype == null) ? true : y.AtypeId == atype.AtypeId)
-                .Select(s => new { s.AnimeName, s.Atype.AtypeName })
+                .Where(a =>  
+                   ((atype == null) ? true : a.AtypeId == atype.AtypeId)
+                && ((atitle == "") ? true : a.AnimeName.Contains(atitle))
+                && ((astudio == null) ? true : a.StudioId == astudio.StudioId)
+                )
+                .Select(anime => new { anime.AnimeName, anime.Atype.AtypeName })
                 .ToList();
 
             int i = 1;
             foreach (var a in result)
             {
-                textBox2.Text += i++ + ". " + a.AnimeName + " [" + a.AtypeName + "]\r\n";
+                Search.Text += i++ + ". " + a.AnimeName + " [" + a.AtypeName + "]\r\n";
             }
         }
+
+        /*private bool CheckGenre(Anime a, ListBox.SelectedObjectCollection genres)
+        {
+            if (genres is null) return true;
+
+
+            HashSet<int> agenres = new HashSet<int>();
+            foreach (var g in a.AnimeAndGenre)
+            {
+                agenres.Add((int)g.GenreId);
+            }
+
+            foreach(var g in genres)
+            {
+                var id = ((Genre)g).GenreId;
+                if (!agenres.Contains(id))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }*/
     }
 }
