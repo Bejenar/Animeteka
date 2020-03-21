@@ -57,8 +57,7 @@ namespace Animeteka.Forms
                 )
                 .AsEnumerable()
                 .Where(a => CheckGenre(a, agenres))
-                .Select(anime => new { anime.AnimeName, anime.Atype.AtypeName, anime.AnimeAndGenre })
-                ;
+                .Select(anime => new { anime.AnimeName, anime.Atype.AtypeName, anime.AnimeAndGenre });
 
             int i = 1;
             foreach (var a in result)
@@ -77,25 +76,28 @@ namespace Animeteka.Forms
         {
             if (genres == null)
             {
-                //Console.WriteLine(">>>>>>>>>>>genres is null");
                 return true;
             }
 
+            // since HashSet.Contains is O(1) time complexity 
             HashSet<int> agenres = new HashSet<int>();
             foreach (var g in a.AnimeAndGenre)
             {
                 agenres.Add((int)g.GenreId);
             }
 
+
             foreach(var g in genres)
             {
                 var id = ((Genre)g).GenreId;
+                // if a title doesn't have one of the checked genres - fuck this title 
                 if (!agenres.Contains(id))
                 {
-                    //Console.WriteLine(">>>>>>>>>>>" + ((Genre)g).GenreName + " is not in " + a.AnimeName);
                     return false;
                 }
             }
+
+            // else add this title to result
             return true;
         }
     }

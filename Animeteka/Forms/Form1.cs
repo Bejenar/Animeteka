@@ -2,6 +2,7 @@
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
+using BunifuAnimatorNS;
 using Microsoft.EntityFrameworkCore;
 
 namespace Animeteka
@@ -17,7 +18,7 @@ namespace Animeteka
 
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "";
+            /*textBox1.Text = "";
 
             var result = Program.db.Anime
                 .Where(y => (atype.Text.Trim(new char[] { ' ' }) == "") ? true : y.Atype.AtypeName == atype.Text)
@@ -28,6 +29,21 @@ namespace Animeteka
             foreach (var a in result)
             { 
                 textBox1.Text += i++ + ". " + a.AnimeName + " [" + a.AtypeName + "]\r\n";
+            }*/
+        }
+
+
+        private void bunifuFlatButton7_Click(object sender, EventArgs e)
+        {
+            if (panel1.Width == 50)
+            {
+                panel1.Visible = false;
+                panel1.Width = 201;
+                bunifuTransition1.ShowSync(panel1);
+            }
+            else
+            {
+                panel1.Width = 50;
             }
         }
     }

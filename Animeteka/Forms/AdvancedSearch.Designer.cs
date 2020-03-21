@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Studio = new System.Windows.Forms.ComboBox();
+            this.Studio_check = new System.Windows.Forms.CheckBox();
             this.Genre = new System.Windows.Forms.CheckedListBox();
             this.Genre_check = new System.Windows.Forms.CheckBox();
             this.DateTo = new System.Windows.Forms.DateTimePicker();
@@ -40,8 +42,6 @@
             this.searchBox = new System.Windows.Forms.TextBox();
             this.button_search = new System.Windows.Forms.Button();
             this.Search = new System.Windows.Forms.TextBox();
-            this.Studio = new System.Windows.Forms.ComboBox();
-            this.Studio_check = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel.SuspendLayout();
             this.SuspendLayout();
@@ -58,10 +58,30 @@
             this.panel1.Controls.Add(this.Date_check);
             this.panel1.Controls.Add(this.Type);
             this.panel1.Controls.Add(this.Type_check);
-            this.panel1.Location = new System.Drawing.Point(730, 0);
+            this.panel1.Location = new System.Drawing.Point(713, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 1000);
             this.panel1.TabIndex = 0;
+            // 
+            // Studio
+            // 
+            this.Studio.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.Studio.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.Studio.FormattingEnabled = true;
+            this.Studio.Location = new System.Drawing.Point(4, 724);
+            this.Studio.Name = "Studio";
+            this.Studio.Size = new System.Drawing.Size(171, 21);
+            this.Studio.TabIndex = 8;
+            // 
+            // Studio_check
+            // 
+            this.Studio_check.AutoSize = true;
+            this.Studio_check.Location = new System.Drawing.Point(4, 701);
+            this.Studio_check.Name = "Studio_check";
+            this.Studio_check.Size = new System.Drawing.Size(61, 17);
+            this.Studio_check.TabIndex = 7;
+            this.Studio_check.Text = "Студия";
+            this.Studio_check.UseVisualStyleBackColor = true;
             // 
             // Genre
             // 
@@ -171,26 +191,6 @@
             this.Search.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.Search.Size = new System.Drawing.Size(678, 345);
             this.Search.TabIndex = 8;
-            // 
-            // Studio
-            // 
-            this.Studio.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.Studio.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.Studio.FormattingEnabled = true;
-            this.Studio.Location = new System.Drawing.Point(4, 724);
-            this.Studio.Name = "Studio";
-            this.Studio.Size = new System.Drawing.Size(171, 21);
-            this.Studio.TabIndex = 8;
-            // 
-            // Studio_check
-            // 
-            this.Studio_check.AutoSize = true;
-            this.Studio_check.Location = new System.Drawing.Point(4, 701);
-            this.Studio_check.Name = "Studio_check";
-            this.Studio_check.Size = new System.Drawing.Size(61, 17);
-            this.Studio_check.TabIndex = 7;
-            this.Studio_check.Text = "Студия";
-            this.Studio_check.UseVisualStyleBackColor = true;
             // 
             // AdvancedSearch
             // 

@@ -19,7 +19,7 @@ namespace Animeteka
             db = new AnimetekaContext();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new WelcomePage());
+            Application.Run(new Form1());
         }
     }
 }
