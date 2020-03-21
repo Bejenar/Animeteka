@@ -51,24 +51,29 @@ namespace Animeteka.Forms
             var result = Program.db.Anime
                 .Include(a => a.AnimeAndGenre)
                 .Where(a =>  
-                   ((atype == null) ? true : a.AtypeId == atype.AtypeId)
-                && ((atitle == "") ? true : a.AnimeName.Contains(atitle))
-                && ((astudio == null) ? true : a.StudioId == astudio.StudioId)
+                    ((atype == null) ? true : a.AtypeId == atype.AtypeId)
+                &&  ((atitle == "") ? true : a.AnimeName.Contains(atitle))
+                &&  ((astudio == null) ? true : a.StudioId == astudio.StudioId)
+                &&  ((Date_check.Checked) ? (a.AirDate.Value > DateFrom.Value && a.AirDate.Value < DateTo.Value) : true)
+                &&  ( Status_check.Checked ? (Status_release.Checked ? (a.ReleaseDate != null) : 
+                                              Status_airing.Checked ? (a.ReleaseDate == null && a.AirDate < DateTime.Now) : 
+                                              true) : true)
                 )
                 .AsEnumerable()
                 .Where(a => CheckGenre(a, agenres))
-                .Select(anime => new { anime.AnimeName, anime.Atype.AtypeName, anime.AnimeAndGenre });
+                .Select(anime => new { anime.AnimeName, anime.Atype.AtypeName, anime.AnimeAndGenre, anime.AirDate });
 
             int i = 1;
             foreach (var a in result)
             {
-                Search.Text += i++ + ". " + a.AnimeName + " [" + a.AtypeName + "]\r\n";
+                Console.WriteLine(">>>>>>>>>> " + a.AirDate.Value + " === " + a.AirDate);
+                Search.Text += i++ + ". " + a.AnimeName + " [" + a.AtypeName + "]" + " [" + a.AirDate.Value + "]\r\n";
                 string gbuf = "(";
                 foreach(var g in a.AnimeAndGenre)
                 {
                     gbuf += g.Genre.GenreName + "; ";
                 }
-                Search.Text += gbuf + ")\r\n";
+                Search.Text += gbuf + ")\r\n\r\n";
             }
         }
 

@@ -42,6 +42,10 @@
             this.searchBox = new System.Windows.Forms.TextBox();
             this.button_search = new System.Windows.Forms.Button();
             this.Search = new System.Windows.Forms.TextBox();
+            this.Status_check = new System.Windows.Forms.CheckBox();
+            this.Status_release = new System.Windows.Forms.RadioButton();
+            this.Status_airing = new System.Windows.Forms.RadioButton();
+            this.Status_announced = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.panel.SuspendLayout();
             this.SuspendLayout();
@@ -49,6 +53,10 @@
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.Status_announced);
+            this.panel1.Controls.Add(this.Status_airing);
+            this.panel1.Controls.Add(this.Status_release);
+            this.panel1.Controls.Add(this.Status_check);
             this.panel1.Controls.Add(this.Studio);
             this.panel1.Controls.Add(this.Studio_check);
             this.panel1.Controls.Add(this.Genre);
@@ -58,7 +66,7 @@
             this.panel1.Controls.Add(this.Date_check);
             this.panel1.Controls.Add(this.Type);
             this.panel1.Controls.Add(this.Type_check);
-            this.panel1.Location = new System.Drawing.Point(713, 0);
+            this.panel1.Location = new System.Drawing.Point(696, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 1000);
             this.panel1.TabIndex = 0;
@@ -116,6 +124,7 @@
             this.DateFrom.Name = "DateFrom";
             this.DateFrom.Size = new System.Drawing.Size(172, 20);
             this.DateFrom.TabIndex = 3;
+            this.DateFrom.Value = new System.DateTime(2000, 3, 21, 18, 14, 0, 0);
             // 
             // Date_check
             // 
@@ -192,6 +201,46 @@
             this.Search.Size = new System.Drawing.Size(678, 345);
             this.Search.TabIndex = 8;
             // 
+            // Status_check
+            // 
+            this.Status_check.AutoSize = true;
+            this.Status_check.Location = new System.Drawing.Point(4, 754);
+            this.Status_check.Name = "Status_check";
+            this.Status_check.Size = new System.Drawing.Size(60, 17);
+            this.Status_check.TabIndex = 9;
+            this.Status_check.Text = "Статус";
+            this.Status_check.UseVisualStyleBackColor = true;
+            // 
+            // Status_release
+            // 
+            this.Status_release.AutoSize = true;
+            this.Status_release.Location = new System.Drawing.Point(4, 780);
+            this.Status_release.Name = "Status_release";
+            this.Status_release.Size = new System.Drawing.Size(60, 17);
+            this.Status_release.TabIndex = 10;
+            this.Status_release.Text = "Вышло";
+            this.Status_release.UseVisualStyleBackColor = true;
+            // 
+            // Status_airing
+            // 
+            this.Status_airing.AutoSize = true;
+            this.Status_airing.Location = new System.Drawing.Point(4, 804);
+            this.Status_airing.Name = "Status_airing";
+            this.Status_airing.Size = new System.Drawing.Size(68, 17);
+            this.Status_airing.TabIndex = 11;
+            this.Status_airing.Text = "Выходит";
+            this.Status_airing.UseVisualStyleBackColor = true;
+            // 
+            // Status_announced
+            // 
+            this.Status_announced.AutoSize = true;
+            this.Status_announced.Location = new System.Drawing.Point(4, 827);
+            this.Status_announced.Name = "Status_announced";
+            this.Status_announced.Size = new System.Drawing.Size(98, 17);
+            this.Status_announced.TabIndex = 12;
+            this.Status_announced.Text = "Анонсировано";
+            this.Status_announced.UseVisualStyleBackColor = true;
+            // 
             // AdvancedSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -229,5 +278,9 @@
         private System.Windows.Forms.TextBox Search;
         private System.Windows.Forms.ComboBox Studio;
         private System.Windows.Forms.CheckBox Studio_check;
+        private System.Windows.Forms.RadioButton Status_announced;
+        private System.Windows.Forms.RadioButton Status_airing;
+        private System.Windows.Forms.RadioButton Status_release;
+        private System.Windows.Forms.CheckBox Status_check;
     }
 }
