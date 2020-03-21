@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.EntityFrameworkCore;
 
 namespace Animeteka.Forms
 {
@@ -44,29 +45,41 @@ namespace Animeteka.Forms
             var atype = (AnimeType)Type.SelectedItem;
             var astudio = (Studio)Studio.SelectedItem;
 
-            var agenres = Genre.SelectedItems;
+            var agenres = Genre.CheckedItems;
 
 
             var result = Program.db.Anime
+                .Include(a => a.AnimeAndGenre)
                 .Where(a =>  
                    ((atype == null) ? true : a.AtypeId == atype.AtypeId)
                 && ((atitle == "") ? true : a.AnimeName.Contains(atitle))
                 && ((astudio == null) ? true : a.StudioId == astudio.StudioId)
                 )
-                .Select(anime => new { anime.AnimeName, anime.Atype.AtypeName })
-                .ToList();
+                .AsEnumerable()
+                .Where(a => CheckGenre(a, agenres))
+                .Select(anime => new { anime.AnimeName, anime.Atype.AtypeName, anime.AnimeAndGenre })
+                ;
 
             int i = 1;
             foreach (var a in result)
             {
                 Search.Text += i++ + ". " + a.AnimeName + " [" + a.AtypeName + "]\r\n";
+                string gbuf = "(";
+                foreach(var g in a.AnimeAndGenre)
+                {
+                    gbuf += g.Genre.GenreName + "; ";
+                }
+                Search.Text += gbuf + ")\r\n";
             }
         }
 
-        /*private bool CheckGenre(Anime a, ListBox.SelectedObjectCollection genres)
+        private bool CheckGenre(Anime a, CheckedListBox.CheckedItemCollection genres)
         {
-            if (genres is null) return true;
-
+            if (genres == null)
+            {
+                //Console.WriteLine(">>>>>>>>>>>genres is null");
+                return true;
+            }
 
             HashSet<int> agenres = new HashSet<int>();
             foreach (var g in a.AnimeAndGenre)
@@ -79,10 +92,11 @@ namespace Animeteka.Forms
                 var id = ((Genre)g).GenreId;
                 if (!agenres.Contains(id))
                 {
+                    //Console.WriteLine(">>>>>>>>>>>" + ((Genre)g).GenreName + " is not in " + a.AnimeName);
                     return false;
                 }
             }
             return true;
-        }*/
+        }
     }
 }
