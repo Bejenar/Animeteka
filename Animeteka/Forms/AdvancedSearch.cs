@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.EntityFrameworkCore;
+using Animeteka.Controls;
 
 namespace Animeteka.Forms
 {
@@ -53,22 +54,33 @@ namespace Animeteka.Forms
 
 
             var result = Program.db.Anime
-                .Include(a => a.AnimeAndGenre)
+                .Include(a => a.Atype)
+                .Include(a => a.Studio)
                 .Where(a =>
                     ((atitle == "") ? true : a.AnimeName.Contains(atitle))
-                &&  (adsControl.Type_check.Checked ? a.AtypeId == atype.AtypeId : true)
-                &&  (adsControl.Studio_check.Checked ? a.StudioId == astudio.StudioId : true)
-                &&  ((adsControl.Date_check.Checked) ? (a.AirDate.Value > adsControl.DateFrom.Value && a.AirDate.Value < adsControl.DateTo.Value) : true)
-                &&  (adsControl.Status_check.Checked ? (adsControl.Status_release.Checked ? (a.ReleaseDate != null) :
-                                              adsControl.Status_airing.Checked ? (a.ReleaseDate == null && a.AirDate < DateTime.Now) : 
+                && (adsControl.Type_check.Checked ? a.AtypeId == atype.AtypeId : true)
+                && (adsControl.Studio_check.Checked ? a.StudioId == astudio.StudioId : true)
+                && ((adsControl.Date_check.Checked) ? (a.AirDate.Value > adsControl.DateFrom.Value && a.AirDate.Value < adsControl.DateTo.Value) : true)
+                && (adsControl.Status_check.Checked ? (adsControl.Status_release.Checked ? (a.ReleaseDate != null) :
+                                              adsControl.Status_airing.Checked ? (a.ReleaseDate == null && a.AirDate < DateTime.Now) :
                                               true) : true)
                 )
                 .AsEnumerable()
-                .Where(a => adsControl.Genre_check.Checked? CheckGenre(a, agenres) : true)
-                .Select(anime => new { anime.AnimeName, anime.Atype.AtypeName, anime.AnimeAndGenre, anime.AirDate });
+                .Where(a => adsControl.Genre_check.Checked ? CheckGenre(a, agenres) : true);
+                //.Select(anime => new { anime.AnimeName, anime.Atype.AtypeName, anime.AnimeAndGenre, anime.AirDate });
 
             int i = 1;
-            Search.Text = "";
+            panelEntry.Controls.Clear();
+            foreach(var a in result)
+            {
+                AnimeEntry entry = new AnimeEntry(a);
+                entry.Dock = DockStyle.Bottom;
+                panelEntry.Controls.Add(entry);
+                entry.Dock = DockStyle.Top;
+                Console.WriteLine(">>>>>>>>>>>>>>  "+a.AnimeName);
+
+            }
+            /*Search.Text = "";
             foreach (var a in result)
             {
                 Console.WriteLine(">>>>>>>>>> " + a.AirDate.Value + " === " + a.AirDate);
@@ -79,7 +91,7 @@ namespace Animeteka.Forms
                     gbuf += g.Genre.GenreName + "; ";
                 }
                 Search.Text += gbuf + ")\r\n\r\n";
-            }
+            }*/
         }
 
         private bool CheckGenre(Anime a, CheckedListBox.CheckedItemCollection genres)
@@ -109,6 +121,11 @@ namespace Animeteka.Forms
 
             // else add this title to result
             return true;
+        }
+
+        private void animeEntry2_Load(object sender, EventArgs e)
+        {
+            //animeEntry2.title.Text = "В тот раз я переродился как слизень жопы и украл героя щита из под подмышки";
         }
     }
 }
