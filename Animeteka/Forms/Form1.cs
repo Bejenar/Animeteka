@@ -32,19 +32,5 @@ namespace Animeteka
             }*/
         }
 
-
-        private void bunifuFlatButton7_Click(object sender, EventArgs e)
-        {
-            if (panel1.Width == 50)
-            {
-                panel1.Visible = false;
-                panel1.Width = 201;
-                bunifuTransition1.ShowSync(panel1);
-            }
-            else
-            {
-                panel1.Width = 50;
-            }
-        }
     }
 }

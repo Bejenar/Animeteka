@@ -19,51 +19,56 @@ namespace Animeteka.Forms
 
             // populate anime type filter
             var types = Program.db.AnimeType.ToList();
-            foreach(var t in types)
+            foreach (var t in types)
             {
-                Type.Items.Add(t);
+                adsControl.Type.Items.Add(t);
             }
+            adsControl.Type.SelectedItem = adsControl.Type.Items[0];
 
             // populate genre filter
             var genres = Program.db.Genre.ToList();
-            foreach(var g in genres)
+            foreach (var g in genres)
             {
-                Genre.Items.Add(g);
+                adsControl.Genre.Items.Add(g);
             }
+            adsControl.Genre.SelectedItem = adsControl.Genre.Items[0];
 
             // populate studio filter
             var studios = Program.db.Studio.ToList();
-            foreach(var s in studios)
+            foreach (var s in studios)
             {
-                Studio.Items.Add(s);
+                adsControl.Studio.Items.Add(s);
             }
+            adsControl.Studio.SelectedItem = adsControl.Studio.Items[0];
         }
 
         private void button_search_Click(object sender, EventArgs e)
         {
             var atitle = searchBox.Text;
-            var atype = (AnimeType)Type.SelectedItem;
-            var astudio = (Studio)Studio.SelectedItem;
+            
+            var atype = (AnimeType)adsControl.Type.SelectedItem;
+            var astudio = (Studio)adsControl.Studio.SelectedItem;
 
-            var agenres = Genre.CheckedItems;
+            var agenres = adsControl.Genre.CheckedItems;
 
 
             var result = Program.db.Anime
                 .Include(a => a.AnimeAndGenre)
-                .Where(a =>  
-                    ((atype == null) ? true : a.AtypeId == atype.AtypeId)
-                &&  ((atitle == "") ? true : a.AnimeName.Contains(atitle))
-                &&  ((astudio == null) ? true : a.StudioId == astudio.StudioId)
-                &&  ((Date_check.Checked) ? (a.AirDate.Value > DateFrom.Value && a.AirDate.Value < DateTo.Value) : true)
-                &&  ( Status_check.Checked ? (Status_release.Checked ? (a.ReleaseDate != null) : 
-                                              Status_airing.Checked ? (a.ReleaseDate == null && a.AirDate < DateTime.Now) : 
+                .Where(a =>
+                    ((atitle == "") ? true : a.AnimeName.Contains(atitle))
+                &&  (adsControl.Type_check.Checked ? a.AtypeId == atype.AtypeId : true)
+                &&  (adsControl.Studio_check.Checked ? a.StudioId == astudio.StudioId : true)
+                &&  ((adsControl.Date_check.Checked) ? (a.AirDate.Value > adsControl.DateFrom.Value && a.AirDate.Value < adsControl.DateTo.Value) : true)
+                &&  (adsControl.Status_check.Checked ? (adsControl.Status_release.Checked ? (a.ReleaseDate != null) :
+                                              adsControl.Status_airing.Checked ? (a.ReleaseDate == null && a.AirDate < DateTime.Now) : 
                                               true) : true)
                 )
                 .AsEnumerable()
-                .Where(a => CheckGenre(a, agenres))
+                .Where(a => adsControl.Genre_check.Checked? CheckGenre(a, agenres) : true)
                 .Select(anime => new { anime.AnimeName, anime.Atype.AtypeName, anime.AnimeAndGenre, anime.AirDate });
 
             int i = 1;
+            Search.Text = "";
             foreach (var a in result)
             {
                 Console.WriteLine(">>>>>>>>>> " + a.AirDate.Value + " === " + a.AirDate);

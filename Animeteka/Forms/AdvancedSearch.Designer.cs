@@ -29,141 +29,60 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Studio = new System.Windows.Forms.ComboBox();
-            this.Studio_check = new System.Windows.Forms.CheckBox();
-            this.Genre = new System.Windows.Forms.CheckedListBox();
-            this.Genre_check = new System.Windows.Forms.CheckBox();
-            this.DateTo = new System.Windows.Forms.DateTimePicker();
-            this.DateFrom = new System.Windows.Forms.DateTimePicker();
-            this.Date_check = new System.Windows.Forms.CheckBox();
-            this.Type = new System.Windows.Forms.ComboBox();
-            this.Type_check = new System.Windows.Forms.CheckBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel = new System.Windows.Forms.Panel();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.button_search = new System.Windows.Forms.Button();
             this.Search = new System.Windows.Forms.TextBox();
-            this.Status_check = new System.Windows.Forms.CheckBox();
-            this.Status_release = new System.Windows.Forms.RadioButton();
-            this.Status_airing = new System.Windows.Forms.RadioButton();
-            this.Status_announced = new System.Windows.Forms.RadioButton();
+            this.adsControl = new Animeteka.Controls.AdvancedSearchControl();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.Status_announced);
-            this.panel1.Controls.Add(this.Status_airing);
-            this.panel1.Controls.Add(this.Status_release);
-            this.panel1.Controls.Add(this.Status_check);
-            this.panel1.Controls.Add(this.Studio);
-            this.panel1.Controls.Add(this.Studio_check);
-            this.panel1.Controls.Add(this.Genre);
-            this.panel1.Controls.Add(this.Genre_check);
-            this.panel1.Controls.Add(this.DateTo);
-            this.panel1.Controls.Add(this.DateFrom);
-            this.panel1.Controls.Add(this.Date_check);
-            this.panel1.Controls.Add(this.Type);
-            this.panel1.Controls.Add(this.Type_check);
-            this.panel1.Location = new System.Drawing.Point(696, 0);
+            this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.adsControl);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(745, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 1000);
-            this.panel1.TabIndex = 0;
+            this.panel1.Size = new System.Drawing.Size(203, 505);
+            this.panel1.TabIndex = 10;
             // 
-            // Studio
+            // panel2
             // 
-            this.Studio.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.Studio.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.Studio.FormattingEnabled = true;
-            this.Studio.Location = new System.Drawing.Point(4, 724);
-            this.Studio.Name = "Studio";
-            this.Studio.Size = new System.Drawing.Size(171, 21);
-            this.Studio.TabIndex = 8;
+            this.panel2.Controls.Add(this.Search);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 100);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(745, 405);
+            this.panel2.TabIndex = 11;
             // 
-            // Studio_check
+            // panel3
             // 
-            this.Studio_check.AutoSize = true;
-            this.Studio_check.Location = new System.Drawing.Point(4, 701);
-            this.Studio_check.Name = "Studio_check";
-            this.Studio_check.Size = new System.Drawing.Size(61, 17);
-            this.Studio_check.TabIndex = 7;
-            this.Studio_check.Text = "Студия";
-            this.Studio_check.UseVisualStyleBackColor = true;
-            // 
-            // Genre
-            // 
-            this.Genre.BackColor = System.Drawing.SystemColors.Control;
-            this.Genre.FormattingEnabled = true;
-            this.Genre.IntegralHeight = false;
-            this.Genre.Location = new System.Drawing.Point(4, 208);
-            this.Genre.Name = "Genre";
-            this.Genre.Size = new System.Drawing.Size(171, 486);
-            this.Genre.TabIndex = 5;
-            // 
-            // Genre_check
-            // 
-            this.Genre_check.AutoSize = true;
-            this.Genre_check.Location = new System.Drawing.Point(4, 185);
-            this.Genre_check.Name = "Genre_check";
-            this.Genre_check.Size = new System.Drawing.Size(55, 17);
-            this.Genre_check.TabIndex = 6;
-            this.Genre_check.Text = "Жанр";
-            this.Genre_check.UseVisualStyleBackColor = true;
-            // 
-            // DateTo
-            // 
-            this.DateTo.Location = new System.Drawing.Point(4, 144);
-            this.DateTo.Name = "DateTo";
-            this.DateTo.Size = new System.Drawing.Size(172, 20);
-            this.DateTo.TabIndex = 4;
-            // 
-            // DateFrom
-            // 
-            this.DateFrom.Location = new System.Drawing.Point(4, 118);
-            this.DateFrom.Name = "DateFrom";
-            this.DateFrom.Size = new System.Drawing.Size(172, 20);
-            this.DateFrom.TabIndex = 3;
-            this.DateFrom.Value = new System.DateTime(2000, 3, 21, 18, 14, 0, 0);
-            // 
-            // Date_check
-            // 
-            this.Date_check.AutoSize = true;
-            this.Date_check.Location = new System.Drawing.Point(4, 95);
-            this.Date_check.Name = "Date_check";
-            this.Date_check.Size = new System.Drawing.Size(92, 17);
-            this.Date_check.TabIndex = 2;
-            this.Date_check.Text = "Дата выхода";
-            this.Date_check.UseVisualStyleBackColor = true;
-            // 
-            // Type
-            // 
-            this.Type.FormattingEnabled = true;
-            this.Type.Location = new System.Drawing.Point(4, 54);
-            this.Type.Name = "Type";
-            this.Type.Size = new System.Drawing.Size(172, 21);
-            this.Type.TabIndex = 1;
-            // 
-            // Type_check
-            // 
-            this.Type_check.AutoSize = true;
-            this.Type_check.Location = new System.Drawing.Point(4, 30);
-            this.Type_check.Name = "Type_check";
-            this.Type_check.Size = new System.Drawing.Size(45, 17);
-            this.Type_check.TabIndex = 0;
-            this.Type_check.Text = "Тип";
-            this.Type_check.UseVisualStyleBackColor = true;
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(745, 100);
+            this.panel3.TabIndex = 12;
             // 
             // panel
             // 
+            this.panel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel.BackColor = System.Drawing.SystemColors.Window;
             this.panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel.Controls.Add(this.searchBox);
-            this.panel.Location = new System.Drawing.Point(25, 12);
+            this.panel.Location = new System.Drawing.Point(17, 3);
             this.panel.Name = "panel";
             this.panel.Padding = new System.Windows.Forms.Padding(10, 10, 10, 3);
             this.panel.Size = new System.Drawing.Size(589, 36);
-            this.panel.TabIndex = 7;
+            this.panel.TabIndex = 9;
             // 
             // searchBox
             // 
@@ -179,67 +98,49 @@
             this.button_search.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button_search.BackgroundImage = global::Animeteka.Properties.Resources.search;
             this.button_search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_search.Dock = System.Windows.Forms.DockStyle.Right;
             this.button_search.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button_search.FlatAppearance.BorderSize = 0;
             this.button_search.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button_search.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_search.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button_search.Location = new System.Drawing.Point(620, 12);
+            this.button_search.Location = new System.Drawing.Point(616, 0);
             this.button_search.Name = "button_search";
-            this.button_search.Size = new System.Drawing.Size(35, 35);
-            this.button_search.TabIndex = 6;
+            this.button_search.Size = new System.Drawing.Size(40, 40);
+            this.button_search.TabIndex = 8;
             this.button_search.UseVisualStyleBackColor = false;
             this.button_search.Click += new System.EventHandler(this.button_search_Click);
             // 
             // Search
             // 
-            this.Search.Location = new System.Drawing.Point(12, 83);
+            this.Search.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Search.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Search.Location = new System.Drawing.Point(0, 0);
             this.Search.Multiline = true;
             this.Search.Name = "Search";
             this.Search.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.Search.Size = new System.Drawing.Size(678, 345);
-            this.Search.TabIndex = 8;
+            this.Search.Size = new System.Drawing.Size(745, 405);
+            this.Search.TabIndex = 0;
             // 
-            // Status_check
+            // adsControl
             // 
-            this.Status_check.AutoSize = true;
-            this.Status_check.Location = new System.Drawing.Point(4, 754);
-            this.Status_check.Name = "Status_check";
-            this.Status_check.Size = new System.Drawing.Size(60, 17);
-            this.Status_check.TabIndex = 9;
-            this.Status_check.Text = "Статус";
-            this.Status_check.UseVisualStyleBackColor = true;
+            this.adsControl.Location = new System.Drawing.Point(0, 0);
+            this.adsControl.Name = "adsControl";
+            this.adsControl.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.adsControl.Size = new System.Drawing.Size(200, 505);
+            this.adsControl.TabIndex = 9;
             // 
-            // Status_release
+            // panel4
             // 
-            this.Status_release.AutoSize = true;
-            this.Status_release.Location = new System.Drawing.Point(4, 780);
-            this.Status_release.Name = "Status_release";
-            this.Status_release.Size = new System.Drawing.Size(60, 17);
-            this.Status_release.TabIndex = 10;
-            this.Status_release.Text = "Вышло";
-            this.Status_release.UseVisualStyleBackColor = true;
-            // 
-            // Status_airing
-            // 
-            this.Status_airing.AutoSize = true;
-            this.Status_airing.Location = new System.Drawing.Point(4, 804);
-            this.Status_airing.Name = "Status_airing";
-            this.Status_airing.Size = new System.Drawing.Size(68, 17);
-            this.Status_airing.TabIndex = 11;
-            this.Status_airing.Text = "Выходит";
-            this.Status_airing.UseVisualStyleBackColor = true;
-            // 
-            // Status_announced
-            // 
-            this.Status_announced.AutoSize = true;
-            this.Status_announced.Location = new System.Drawing.Point(4, 827);
-            this.Status_announced.Name = "Status_announced";
-            this.Status_announced.Size = new System.Drawing.Size(98, 17);
-            this.Status_announced.TabIndex = 12;
-            this.Status_announced.Text = "Анонсировано";
-            this.Status_announced.UseVisualStyleBackColor = true;
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.Controls.Add(this.panel);
+            this.panel4.Controls.Add(this.button_search);
+            this.panel4.Location = new System.Drawing.Point(38, 29);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(656, 40);
+            this.panel4.TabIndex = 1;
             // 
             // AdvancedSearch
             // 
@@ -247,40 +148,33 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(948, 505);
-            this.Controls.Add(this.Search);
-            this.Controls.Add(this.panel);
-            this.Controls.Add(this.button_search);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Name = "AdvancedSearch";
             this.Text = "AdvancedSearch";
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
+        private Controls.AdvancedSearchControl advancedSearchControl;
+        private Controls.AdvancedSearchControl adsControl;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox Type;
-        private System.Windows.Forms.CheckBox Type_check;
-        private System.Windows.Forms.CheckedListBox Genre;
-        private System.Windows.Forms.DateTimePicker DateTo;
-        private System.Windows.Forms.DateTimePicker DateFrom;
-        private System.Windows.Forms.CheckBox Date_check;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.Button button_search;
-        private System.Windows.Forms.CheckBox Genre_check;
         private System.Windows.Forms.TextBox Search;
-        private System.Windows.Forms.ComboBox Studio;
-        private System.Windows.Forms.CheckBox Studio_check;
-        private System.Windows.Forms.RadioButton Status_announced;
-        private System.Windows.Forms.RadioButton Status_airing;
-        private System.Windows.Forms.RadioButton Status_release;
-        private System.Windows.Forms.CheckBox Status_check;
+        private System.Windows.Forms.Panel panel4;
     }
 }
