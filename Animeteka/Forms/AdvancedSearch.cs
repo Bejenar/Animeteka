@@ -58,6 +58,7 @@ namespace Animeteka.Forms
             animeEntries = Program.db.Anime
                 .Include(a => a.Atype)
                 .Include(a => a.Studio)
+                .Include(a => a.AnimeAndGenre)
                 .Where(a =>
                     ((atitle == "") ? true : a.AnimeName.Contains(atitle))
                 && (adsControl.Type_check.Checked ? a.AtypeId == atype.AtypeId : true)
@@ -72,19 +73,6 @@ namespace Animeteka.Forms
             //.Select(anime => new { anime.AnimeName, anime.Atype.AtypeName, anime.AnimeAndGenre, anime.AirDate });
 
             backgroundEntryWorker.RunWorkerAsync();
-            
-            /*Search.Text = "";
-            foreach (var a in result)
-            {
-                Console.WriteLine(">>>>>>>>>> " + a.AirDate.Value + " === " + a.AirDate);
-                Search.Text += i++ + ". " + a.AnimeName + " [" + a.AtypeName + "]" + " [" + a.AirDate.Value + "]\r\n";
-                string gbuf = "(";
-                foreach(var g in a.AnimeAndGenre)
-                {
-                    gbuf += g.Genre.GenreName + "; ";
-                }
-                Search.Text += gbuf + ")\r\n\r\n";
-            }*/
         }
 
         private bool CheckGenre(Anime a, CheckedListBox.CheckedItemCollection genres)
