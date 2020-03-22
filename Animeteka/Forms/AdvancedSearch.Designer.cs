@@ -36,6 +36,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.button_search = new System.Windows.Forms.Button();
             this.adsControl = new Animeteka.Controls.AdvancedSearchControl();
+            this.backgroundEntryWorker = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel.SuspendLayout();
@@ -134,6 +135,11 @@
             this.adsControl.Size = new System.Drawing.Size(200, 405);
             this.adsControl.TabIndex = 9;
             // 
+            // backgroundEntryWorker
+            // 
+            this.backgroundEntryWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundEntryWorker_DoWork);
+            this.backgroundEntryWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundEntryWorker_RunWorkerCompleted);
+            // 
             // AdvancedSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,5 +171,6 @@
         private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.Button button_search;
         private System.Windows.Forms.Panel panel4;
+        private System.ComponentModel.BackgroundWorker backgroundEntryWorker;
     }
 }

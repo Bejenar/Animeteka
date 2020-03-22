@@ -14,6 +14,8 @@ namespace Animeteka.Forms
 {
     public partial class AdvancedSearch : Form
     {
+        IEnumerable<Anime> animeEntries;
+
         public AdvancedSearch()
         {
             InitializeComponent();
@@ -53,7 +55,7 @@ namespace Animeteka.Forms
             var agenres = adsControl.Genre.CheckedItems;
 
 
-            var result = Program.db.Anime
+            animeEntries = Program.db.Anime
                 .Include(a => a.Atype)
                 .Include(a => a.Studio)
                 .Where(a =>
@@ -67,19 +69,10 @@ namespace Animeteka.Forms
                 )
                 .AsEnumerable()
                 .Where(a => adsControl.Genre_check.Checked ? CheckGenre(a, agenres) : true);
-                //.Select(anime => new { anime.AnimeName, anime.Atype.AtypeName, anime.AnimeAndGenre, anime.AirDate });
+            //.Select(anime => new { anime.AnimeName, anime.Atype.AtypeName, anime.AnimeAndGenre, anime.AirDate });
 
-            int i = 1;
-            panelEntry.Controls.Clear();
-            foreach(var a in result)
-            {
-                AnimeEntry entry = new AnimeEntry(a);
-                entry.Dock = DockStyle.Bottom;
-                panelEntry.Controls.Add(entry);
-                entry.Dock = DockStyle.Top;
-                Console.WriteLine(">>>>>>>>>>>>>>  "+a.AnimeName);
-
-            }
+            backgroundEntryWorker.RunWorkerAsync();
+            
             /*Search.Text = "";
             foreach (var a in result)
             {
@@ -126,6 +119,37 @@ namespace Animeteka.Forms
         private void animeEntry2_Load(object sender, EventArgs e)
         {
             //animeEntry2.title.Text = "В тот раз я переродился как слизень жопы и украл героя щита из под подмышки";
+        }
+
+        private void backgroundEntryWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BeginInvoke(new MethodInvoker(delegate
+            {
+                panelEntry.Controls.Clear();
+            }));
+            
+            foreach (var a in animeEntries)
+            {
+                AnimeEntry entry = new AnimeEntry(a);
+                entry.Dock = DockStyle.Top;
+                
+                BeginInvoke(new MethodInvoker(delegate
+               {
+                   entry.Visible = false;
+                   panelEntry.Controls.Add(entry);
+                   entry.BringToFront();  // entry.BringToFront(); - to add controls in correct order
+                   entry.Visible = true;                 
+               }));
+                System.Threading.Thread.Sleep(100);
+                
+                Console.WriteLine(">>>>>>>>>>>>>>  " + a.AnimeName);
+
+            }
+        }
+
+        private void backgroundEntryWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            Console.WriteLine(">>>>>>>>>>>>>>>> worker done");
         }
     }
 }
