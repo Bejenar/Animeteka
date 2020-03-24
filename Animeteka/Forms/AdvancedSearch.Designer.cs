@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.adsControl = new Animeteka.Controls.AdvancedSearchControl();
             this.panelEntry = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -37,6 +36,7 @@
             this.searchBox = new System.Windows.Forms.TextBox();
             this.button_search = new System.Windows.Forms.Button();
             this.backgroundEntryWorker = new System.ComponentModel.BackgroundWorker();
+            this.adsControl = new Animeteka.Controls.AdvancedSearchControl();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -49,21 +49,10 @@
             this.panel1.BackColor = System.Drawing.Color.SeaShell;
             this.panel1.Controls.Add(this.adsControl);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(748, 100);
+            this.panel1.Location = new System.Drawing.Point(708, 100);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 405);
+            this.panel1.Size = new System.Drawing.Size(240, 405);
             this.panel1.TabIndex = 10;
-            // 
-            // adsControl
-            // 
-            this.adsControl.BackColor = System.Drawing.Color.Transparent;
-            this.adsControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.adsControl.Dock = System.Windows.Forms.DockStyle.Right;
-            this.adsControl.Location = new System.Drawing.Point(0, 0);
-            this.adsControl.Name = "adsControl";
-            this.adsControl.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.adsControl.Size = new System.Drawing.Size(200, 405);
-            this.adsControl.TabIndex = 9;
             // 
             // panelEntry
             // 
@@ -71,7 +60,7 @@
             this.panelEntry.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEntry.Location = new System.Drawing.Point(0, 100);
             this.panelEntry.Name = "panelEntry";
-            this.panelEntry.Size = new System.Drawing.Size(748, 405);
+            this.panelEntry.Size = new System.Drawing.Size(708, 405);
             this.panelEntry.TabIndex = 11;
             // 
             // panel3
@@ -111,9 +100,10 @@
             // 
             this.searchBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.searchBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.searchBox.Location = new System.Drawing.Point(10, 10);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(579, 13);
+            this.searchBox.Size = new System.Drawing.Size(579, 15);
             this.searchBox.TabIndex = 0;
             // 
             // button_search
@@ -139,6 +129,17 @@
             // 
             this.backgroundEntryWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundEntryWorker_DoWork);
             this.backgroundEntryWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundEntryWorker_RunWorkerCompleted);
+            // 
+            // adsControl
+            // 
+            this.adsControl.BackColor = System.Drawing.Color.Transparent;
+            this.adsControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.adsControl.Dock = System.Windows.Forms.DockStyle.Right;
+            this.adsControl.Location = new System.Drawing.Point(0, 0);
+            this.adsControl.Name = "adsControl";
+            this.adsControl.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.adsControl.Size = new System.Drawing.Size(240, 405);
+            this.adsControl.TabIndex = 9;
             // 
             // AdvancedSearch
             // 
