@@ -36,6 +36,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net, Version=0.1.5073.29922, Culture=neutral, PublicKeyToken=6bcd409ee6bc9292, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt-Official.0.1.109\lib\BCrypt.Net.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\Bunifu_UI_v1.5.3.dll</HintPath>
@@ -170,6 +173,8 @@
     </Compile>
     <Compile Include="Database\Entities\Anime.cs" />
     <Compile Include="Database\Entities\AnimeAndGenre.cs" />
+    <Compile Include="Database\Entities\User.cs" />
+    <Compile Include="Database\Entities\UserRoles.cs" />
     <Compile Include="Database\Other\AnimeAudit.cs" />
     <Compile Include="Database\Views\AnimeCharacterView.cs" />
     <Compile Include="Database\Views\AnimeGenreView.cs" />
@@ -185,6 +190,12 @@
     </Compile>
     <Compile Include="Forms\AdvancedSearch.Designer.cs">
       <DependentUpon>AdvancedSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Authorization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Authorization.Designer.cs">
+      <DependentUpon>Authorization.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
@@ -205,6 +216,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Database\Entities\Roles.cs" />
     <Compile Include="Database\Entities\Studio.cs" />
+    <Compile Include="Security\Hashing.cs" />
     <EmbeddedResource Include="Controls\AdvancedSearchControl.resx">
       <DependentUpon>AdvancedSearchControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdvancedSearch.resx">
       <DependentUpon>AdvancedSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Authorization.resx">
+      <DependentUpon>Authorization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -258,6 +273,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\placeholder.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LICENSE.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

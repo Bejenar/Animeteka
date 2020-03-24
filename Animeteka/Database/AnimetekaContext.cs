@@ -35,6 +35,8 @@ namespace Animeteka
         public virtual DbSet<Personal> Personal { get; set; }
         public virtual DbSet<Roles> Roles { get; set; }
         public virtual DbSet<Studio> Studio { get; set; }
+        public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<UserRoles> UserRoles { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -414,6 +416,41 @@ namespace Animeteka
                     .HasColumnName("studio_name")
                     .HasMaxLength(255)
                     .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.HasIndex(e => e.Login)
+                    .HasName("UQ__User__5E55825B8B698C5B")
+                    .IsUnique();
+
+                entity.Property(e => e.Login)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Password)
+                    .IsRequired()
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<UserRoles>(entity =>
+            {
+                entity.HasKey(u => new { u.UserId, u.Role});
+
+                entity.ToTable("User_Roles");
+
+                entity.HasIndex(e => e.UserId)
+                    .HasName("UQ__User_Rol__206D917124AAA715")
+                    .IsUnique();
+
+                entity.Property(e => e.UserId).HasColumnName("User_Id");
+
+                entity.HasOne(d => d.User)
+                    .WithOne(p => p.UserRoles)
+                    .HasForeignKey<UserRoles>(d => d.UserId)
+                    .HasConstraintName("FK__User_Role__User___1CBC4616");
             });
 
             OnModelCreatingPartial(modelBuilder);
