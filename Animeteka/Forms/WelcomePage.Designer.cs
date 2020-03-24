@@ -28,87 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WelcomePage));
-            this.button_advanced = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button_search = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            BunifuAnimatorNS.Animation animation5 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation6 = new BunifuAnimatorNS.Animation();
+            this.pictureBoxAnime = new System.Windows.Forms.PictureBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.языкToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.русскийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.английскийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelAnime = new System.Windows.Forms.Panel();
+            this.panelButtonAnime = new System.Windows.Forms.Panel();
+            this.buttonAnime = new System.Windows.Forms.Button();
+            this.bunifuTransition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.bunifuTransition2 = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelButtonCompany = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelButtonPerson = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panelButtonCharacter = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAnime)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            this.panelAnime.SuspendLayout();
+            this.panelButtonAnime.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panelButtonCompany.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panelButtonPerson.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel5.SuspendLayout();
+            this.panelButtonCharacter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
-            // button_advanced
+            // pictureBoxAnime
             // 
-            this.button_advanced.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button_advanced.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button_advanced.FlatAppearance.BorderSize = 0;
-            this.button_advanced.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button_advanced.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            resources.ApplyResources(this.button_advanced, "button_advanced");
-            this.button_advanced.Name = "button_advanced";
-            this.button_advanced.UseVisualStyleBackColor = false;
-            this.button_advanced.Click += new System.EventHandler(this.button_advanced_Click);
-            // 
-            // panel1
-            // 
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.button_advanced);
-            this.panel1.Controls.Add(this.button_search);
-            this.panel1.Name = "panel1";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.Window;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.textBox1);
-            resources.ApplyResources(this.panel2, "panel2");
-            this.panel2.Name = "panel2";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.textBox1, "textBox1");
-            this.textBox1.Name = "textBox1";
-            // 
-            // button_search
-            // 
-            this.button_search.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button_search.BackgroundImage = global::Animeteka.Properties.Resources.search;
-            resources.ApplyResources(this.button_search, "button_search");
-            this.button_search.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button_search.FlatAppearance.BorderSize = 0;
-            this.button_search.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button_search.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button_search.Name = "button_search";
-            this.button_search.UseVisualStyleBackColor = false;
-            // 
-            // panel3
-            // 
-            resources.ApplyResources(this.panel3, "panel3");
-            this.panel3.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.panel3.Name = "panel3";
-            // 
-            // pictureBox1
-            // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Image = global::Animeteka.Properties.Resources.bg_welcome;
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
+            resources.ApplyResources(this.pictureBoxAnime, "pictureBoxAnime");
+            this.bunifuTransition1.SetDecoration(this.pictureBoxAnime, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.pictureBoxAnime, BunifuAnimatorNS.DecorationType.None);
+            this.pictureBoxAnime.Image = global::Animeteka.Properties.Resources.bg_welcome;
+            this.pictureBoxAnime.Name = "pictureBoxAnime";
+            this.pictureBoxAnime.TabStop = false;
+            this.pictureBoxAnime.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
             // 
             // toolStrip1
             // 
+            this.bunifuTransition2.SetDecoration(this.toolStrip1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition1.SetDecoration(this.toolStrip1, BunifuAnimatorNS.DecorationType.None);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripDropDownButton1});
             resources.ApplyResources(this.toolStrip1, "toolStrip1");
@@ -142,23 +117,216 @@
             resources.ApplyResources(this.английскийToolStripMenuItem, "английскийToolStripMenuItem");
             this.английскийToolStripMenuItem.Click += new System.EventHandler(this.английскийToolStripMenuItem_Click);
             // 
+            // panelAnime
+            // 
+            resources.ApplyResources(this.panelAnime, "panelAnime");
+            this.panelAnime.BackColor = System.Drawing.Color.Transparent;
+            this.panelAnime.Controls.Add(this.panelButtonAnime);
+            this.panelAnime.Controls.Add(this.pictureBoxAnime);
+            this.bunifuTransition2.SetDecoration(this.panelAnime, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition1.SetDecoration(this.panelAnime, BunifuAnimatorNS.DecorationType.None);
+            this.panelAnime.Name = "panelAnime";
+            // 
+            // panelButtonAnime
+            // 
+            this.panelButtonAnime.BackColor = System.Drawing.SystemColors.Control;
+            this.panelButtonAnime.Controls.Add(this.buttonAnime);
+            this.bunifuTransition2.SetDecoration(this.panelButtonAnime, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition1.SetDecoration(this.panelButtonAnime, BunifuAnimatorNS.DecorationType.None);
+            resources.ApplyResources(this.panelButtonAnime, "panelButtonAnime");
+            this.panelButtonAnime.Name = "panelButtonAnime";
+            // 
+            // buttonAnime
+            // 
+            this.bunifuTransition1.SetDecoration(this.buttonAnime, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.buttonAnime, BunifuAnimatorNS.DecorationType.None);
+            resources.ApplyResources(this.buttonAnime, "buttonAnime");
+            this.buttonAnime.Name = "buttonAnime";
+            this.buttonAnime.UseVisualStyleBackColor = true;
+            this.buttonAnime.Click += new System.EventHandler(this.button_advanced_Click);
+            // 
+            // bunifuTransition1
+            // 
+            this.bunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
+            this.bunifuTransition1.Cursor = null;
+            animation5.AnimateOnlyDifferences = true;
+            animation5.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.BlindCoeff")));
+            animation5.LeafCoeff = 0F;
+            animation5.MaxTime = 1F;
+            animation5.MinTime = 0F;
+            animation5.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicCoeff")));
+            animation5.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicShift")));
+            animation5.MosaicSize = 0;
+            animation5.Padding = new System.Windows.Forms.Padding(0);
+            animation5.RotateCoeff = 0F;
+            animation5.RotateLimit = 0F;
+            animation5.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.ScaleCoeff")));
+            animation5.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.SlideCoeff")));
+            animation5.TimeCoeff = 0F;
+            animation5.TransparencyCoeff = 0F;
+            this.bunifuTransition1.DefaultAnimation = animation5;
+            // 
+            // bunifuTransition2
+            // 
+            this.bunifuTransition2.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
+            this.bunifuTransition2.Cursor = null;
+            animation6.AnimateOnlyDifferences = true;
+            animation6.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.BlindCoeff")));
+            animation6.LeafCoeff = 0F;
+            animation6.MaxTime = 1F;
+            animation6.MinTime = 0F;
+            animation6.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicCoeff")));
+            animation6.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicShift")));
+            animation6.MosaicSize = 1;
+            animation6.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
+            animation6.RotateCoeff = 0F;
+            animation6.RotateLimit = 0F;
+            animation6.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.ScaleCoeff")));
+            animation6.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.SlideCoeff")));
+            animation6.TimeCoeff = 2F;
+            animation6.TransparencyCoeff = 0F;
+            this.bunifuTransition2.DefaultAnimation = animation6;
+            // 
+            // panel1
+            // 
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.panelButtonCompany);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.bunifuTransition2.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition1.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
+            this.panel1.Name = "panel1";
+            // 
+            // panelButtonCompany
+            // 
+            this.panelButtonCompany.BackColor = System.Drawing.SystemColors.Control;
+            this.panelButtonCompany.Controls.Add(this.button1);
+            this.bunifuTransition2.SetDecoration(this.panelButtonCompany, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition1.SetDecoration(this.panelButtonCompany, BunifuAnimatorNS.DecorationType.None);
+            resources.ApplyResources(this.panelButtonCompany, "panelButtonCompany");
+            this.panelButtonCompany.Name = "panelButtonCompany";
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.bunifuTransition1.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
+            this.pictureBox1.Image = global::Animeteka.Properties.Resources.bg_welcome;
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter_1);
+            // 
+            // panel3
+            // 
+            resources.ApplyResources(this.panel3, "panel3");
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.panelButtonPerson);
+            this.panel3.Controls.Add(this.pictureBox2);
+            this.bunifuTransition2.SetDecoration(this.panel3, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition1.SetDecoration(this.panel3, BunifuAnimatorNS.DecorationType.None);
+            this.panel3.Name = "panel3";
+            // 
+            // panelButtonPerson
+            // 
+            this.panelButtonPerson.BackColor = System.Drawing.SystemColors.Control;
+            this.panelButtonPerson.Controls.Add(this.button2);
+            this.bunifuTransition2.SetDecoration(this.panelButtonPerson, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition1.SetDecoration(this.panelButtonPerson, BunifuAnimatorNS.DecorationType.None);
+            resources.ApplyResources(this.panelButtonPerson, "panelButtonPerson");
+            this.panelButtonPerson.Name = "panelButtonPerson";
+            // 
+            // pictureBox2
+            // 
+            resources.ApplyResources(this.pictureBox2, "pictureBox2");
+            this.bunifuTransition1.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
+            this.pictureBox2.Image = global::Animeteka.Properties.Resources.bg_welcome;
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
+            // 
+            // panel5
+            // 
+            resources.ApplyResources(this.panel5, "panel5");
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.Controls.Add(this.panelButtonCharacter);
+            this.panel5.Controls.Add(this.pictureBox3);
+            this.bunifuTransition2.SetDecoration(this.panel5, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition1.SetDecoration(this.panel5, BunifuAnimatorNS.DecorationType.None);
+            this.panel5.Name = "panel5";
+            // 
+            // panelButtonCharacter
+            // 
+            this.panelButtonCharacter.BackColor = System.Drawing.SystemColors.Control;
+            this.panelButtonCharacter.Controls.Add(this.button3);
+            this.bunifuTransition2.SetDecoration(this.panelButtonCharacter, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition1.SetDecoration(this.panelButtonCharacter, BunifuAnimatorNS.DecorationType.None);
+            resources.ApplyResources(this.panelButtonCharacter, "panelButtonCharacter");
+            this.panelButtonCharacter.Name = "panelButtonCharacter";
+            // 
+            // pictureBox3
+            // 
+            resources.ApplyResources(this.pictureBox3, "pictureBox3");
+            this.bunifuTransition1.SetDecoration(this.pictureBox3, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.pictureBox3, BunifuAnimatorNS.DecorationType.None);
+            this.pictureBox3.Image = global::Animeteka.Properties.Resources.bg_welcome;
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.MouseEnter += new System.EventHandler(this.pictureBox3_MouseEnter);
+            // 
+            // button1
+            // 
+            this.bunifuTransition1.SetDecoration(this.button1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.button1, BunifuAnimatorNS.DecorationType.None);
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.bunifuTransition1.SetDecoration(this.button2, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.button2, BunifuAnimatorNS.DecorationType.None);
+            resources.ApplyResources(this.button2, "button2");
+            this.button2.Name = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.bunifuTransition1.SetDecoration(this.button3, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.button3, BunifuAnimatorNS.DecorationType.None);
+            resources.ApplyResources(this.button3, "button3");
+            this.button3.Name = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // WelcomePage
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox1);
+            this.BackgroundImage = global::Animeteka.Properties.Resources.login_bg;
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelAnime);
+            this.Controls.Add(this.toolStrip1);
+            this.bunifuTransition1.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.Name = "WelcomePage";
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.MouseEnter += new System.EventHandler(this.WelcomePage_MouseEnter);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAnime)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.panelAnime.ResumeLayout(false);
+            this.panelButtonAnime.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panelButtonCompany.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panelButtonPerson.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panelButtonCharacter.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,17 +334,28 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button_search;
-        private System.Windows.Forms.Button button_advanced;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox pictureBoxAnime;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem языкToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem русскийToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem английскийToolStripMenuItem;
+        private BunifuAnimatorNS.BunifuTransition bunifuTransition1;
+        private System.Windows.Forms.Panel panelAnime;
+        private System.Windows.Forms.Panel panelButtonAnime;
+        private System.Windows.Forms.Button buttonAnime;
+        private BunifuAnimatorNS.BunifuTransition bunifuTransition2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelButtonCompany;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panelButtonPerson;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panelButtonCharacter;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
