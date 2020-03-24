@@ -22,6 +22,7 @@ namespace Animeteka
         public short? EpDuration { get; set; }
         public short? EpCount { get; set; }
         public short? EpAired { get; set; }
+        public string AnimeUrl { get; set; }
 
         public virtual AnimeType Atype { get; set; }
         public virtual Studio Studio { get; set; }

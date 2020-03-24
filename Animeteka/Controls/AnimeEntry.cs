@@ -12,14 +12,20 @@ namespace Animeteka.Controls
 {
     public partial class AnimeEntry : UserControl
     {
-        public AnimeEntry(Anime anime)
+        public AnimeEntry(Anime anime) // передаю сюда аниме из массива
         {
             InitializeComponent();
 
+            // и каждая новая созданная такая панелька заполняется разными данными
+            // сейчас скажу
+
             title.Text = anime.AnimeName;
+            if(anime.Atype != null)
             type.Text = anime.Atype.AtypeName;
+            if(anime.Studio != null)
             studio.Text = anime.Studio.StudioName;
             year.Text = "Год: " + anime.AirDate.Value.Year;
+            pictureBox1.Load(anime.AnimeUrl);
         }
 
         private void bunifuCustomLabel3_Click(object sender, EventArgs e)
@@ -29,7 +35,7 @@ namespace Animeteka.Controls
 
         private void AnimeEntry_Paint(object sender, PaintEventArgs e)
         {
-            Console.WriteLine(">>>>>>>>>drawing a line");
+            //Console.WriteLine(">>>>>>>>>drawing a line");
         }
 
         private void AnimeEntry_Load(object sender, EventArgs e)

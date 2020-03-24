@@ -84,6 +84,8 @@ namespace Animeteka
 
                 entity.Property(e => e.EpDuration).HasColumnName("ep_duration");
 
+                entity.Property(e => e.AnimeUrl).HasColumnName("img_url");
+
                 entity.Property(e => e.ReleaseDate)
                     .HasColumnName("release_date")
                     .HasColumnType("date");
