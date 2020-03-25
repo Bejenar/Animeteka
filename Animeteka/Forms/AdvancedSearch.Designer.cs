@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.adsControl = new Animeteka.Controls.AdvancedSearchControl();
             this.panelEntry = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -36,7 +37,6 @@
             this.searchBox = new System.Windows.Forms.TextBox();
             this.button_search = new System.Windows.Forms.Button();
             this.backgroundEntryWorker = new System.ComponentModel.BackgroundWorker();
-            this.adsControl = new Animeteka.Controls.AdvancedSearchControl();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -53,6 +53,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(240, 405);
             this.panel1.TabIndex = 10;
+            // 
+            // adsControl
+            // 
+            this.adsControl.BackColor = System.Drawing.Color.Transparent;
+            this.adsControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.adsControl.Dock = System.Windows.Forms.DockStyle.Right;
+            this.adsControl.Location = new System.Drawing.Point(0, 0);
+            this.adsControl.Name = "adsControl";
+            this.adsControl.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.adsControl.Size = new System.Drawing.Size(240, 405);
+            this.adsControl.TabIndex = 9;
             // 
             // panelEntry
             // 
@@ -129,17 +140,6 @@
             // 
             this.backgroundEntryWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundEntryWorker_DoWork);
             this.backgroundEntryWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundEntryWorker_RunWorkerCompleted);
-            // 
-            // adsControl
-            // 
-            this.adsControl.BackColor = System.Drawing.Color.Transparent;
-            this.adsControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.adsControl.Dock = System.Windows.Forms.DockStyle.Right;
-            this.adsControl.Location = new System.Drawing.Point(0, 0);
-            this.adsControl.Name = "adsControl";
-            this.adsControl.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.adsControl.Size = new System.Drawing.Size(240, 405);
-            this.adsControl.TabIndex = 9;
             // 
             // AdvancedSearch
             // 

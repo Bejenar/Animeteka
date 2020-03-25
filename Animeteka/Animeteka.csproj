@@ -165,11 +165,41 @@
     <Compile Include="Controls\AdvancedSearchControl.Designer.cs">
       <DependentUpon>AdvancedSearchControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\AnimeCast.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AnimeCast.Designer.cs">
+      <DependentUpon>AnimeCast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AnimeCharacters.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AnimeCharacters.Designer.cs">
+      <DependentUpon>AnimeCharacters.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\AnimeEntry.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\AnimeEntry.Designer.cs">
       <DependentUpon>AnimeEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AnimeFullEntry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AnimeFullEntry.Designer.cs">
+      <DependentUpon>AnimeFullEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CharacterPreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CharacterPreview.Designer.cs">
+      <DependentUpon>CharacterPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PersonPreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PersonPreview.Designer.cs">
+      <DependentUpon>PersonPreview.cs</DependentUpon>
     </Compile>
     <Compile Include="Database\Entities\Anime.cs" />
     <Compile Include="Database\Entities\AnimeAndGenre.cs" />
@@ -191,6 +221,12 @@
     <Compile Include="Forms\AdvancedSearch.Designer.cs">
       <DependentUpon>AdvancedSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AnimeInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AnimeInfo.Designer.cs">
+      <DependentUpon>AnimeInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Authorization.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +242,12 @@
     <Compile Include="Database\Entities\Genre.cs" />
     <Compile Include="Database\Entities\Person.cs" />
     <Compile Include="Database\Entities\Personal.cs" />
+    <Compile Include="Forms\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\WelcomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,17 +262,38 @@
     <EmbeddedResource Include="Controls\AdvancedSearchControl.resx">
       <DependentUpon>AdvancedSearchControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AnimeCast.resx">
+      <DependentUpon>AnimeCast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AnimeCharacters.resx">
+      <DependentUpon>AnimeCharacters.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\AnimeEntry.resx">
       <DependentUpon>AnimeEntry.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AnimeFullEntry.resx">
+      <DependentUpon>AnimeFullEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CharacterPreview.resx">
+      <DependentUpon>CharacterPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PersonPreview.resx">
+      <DependentUpon>PersonPreview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdvancedSearch.resx">
       <DependentUpon>AdvancedSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AnimeInfo.resx">
+      <DependentUpon>AnimeInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Authorization.resx">
       <DependentUpon>Authorization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WelcomePage.en.resx">
       <DependentUpon>WelcomePage.cs</DependentUpon>
@@ -288,6 +351,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LICENSE.txt" />
+    <None Include="Resources\person_placeholder.jpg" />
+    <None Include="Resources\ch_placeholder.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -73,6 +73,16 @@ namespace Animeteka.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ch_placeholder {
+            get {
+                object obj = ResourceManager.GetObject("ch_placeholder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lock_gray {
             get {
                 object obj = ResourceManager.GetObject("lock_gray", resourceCulture);
@@ -86,6 +96,16 @@ namespace Animeteka.Properties {
         internal static System.Drawing.Bitmap login_bg {
             get {
                 object obj = ResourceManager.GetObject("login_bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap person_placeholder {
+            get {
+                object obj = ResourceManager.GetObject("person_placeholder", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
