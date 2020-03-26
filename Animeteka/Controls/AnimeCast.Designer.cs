@@ -32,11 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.personPreview3 = new Animeteka.Controls.PersonPreview();
-            this.personPreview2 = new Animeteka.Controls.PersonPreview();
-            this.personPreview1 = new Animeteka.Controls.PersonPreview();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -72,42 +68,13 @@
             // panel3
             // 
             this.panel3.AutoSize = true;
-            this.panel3.Controls.Add(this.personPreview3);
-            this.panel3.Controls.Add(this.personPreview2);
-            this.panel3.Controls.Add(this.personPreview1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 34);
+            this.panel3.MinimumSize = new System.Drawing.Size(0, 207);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(10);
-            this.panel3.Size = new System.Drawing.Size(948, 581);
+            this.panel3.Size = new System.Drawing.Size(948, 207);
             this.panel3.TabIndex = 2;
-            // 
-            // personPreview3
-            // 
-            this.personPreview3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.personPreview3.Location = new System.Drawing.Point(10, 384);
-            this.personPreview3.Name = "personPreview3";
-            this.personPreview3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.personPreview3.Size = new System.Drawing.Size(928, 187);
-            this.personPreview3.TabIndex = 2;
-            // 
-            // personPreview2
-            // 
-            this.personPreview2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.personPreview2.Location = new System.Drawing.Point(10, 197);
-            this.personPreview2.Name = "personPreview2";
-            this.personPreview2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.personPreview2.Size = new System.Drawing.Size(928, 187);
-            this.personPreview2.TabIndex = 1;
-            // 
-            // personPreview1
-            // 
-            this.personPreview1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.personPreview1.Location = new System.Drawing.Point(10, 10);
-            this.personPreview1.Name = "personPreview1";
-            this.personPreview1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.personPreview1.Size = new System.Drawing.Size(928, 187);
-            this.personPreview1.TabIndex = 0;
             // 
             // AnimeCast
             // 
@@ -117,10 +84,9 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Name = "AnimeCast";
-            this.Size = new System.Drawing.Size(948, 802);
+            this.Size = new System.Drawing.Size(948, 250);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,8 +98,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private PersonPreview personPreview3;
-        private PersonPreview personPreview2;
-        private PersonPreview personPreview1;
     }
 }

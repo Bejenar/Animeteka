@@ -31,12 +31,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.studio = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.year = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.type = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.title = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -78,6 +78,14 @@
             this.panel2.Size = new System.Drawing.Size(585, 145);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(580, 116);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 4;
             // 
             // studio
             // 
@@ -124,6 +132,7 @@
             this.title.Size = new System.Drawing.Size(266, 18);
             this.title.TabIndex = 0;
             this.title.Text = "Стальной Алхимик: Братство";
+            this.title.Click += new System.EventHandler(this.title_Click);
             // 
             // panel3
             // 
@@ -132,14 +141,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(695, 145);
             this.panel3.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(580, 116);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
-            this.label1.TabIndex = 4;
             // 
             // AnimeEntry
             // 

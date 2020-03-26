@@ -15,6 +15,7 @@ namespace Animeteka
         public string PersonName { get; set; }
         public string PersonNameEn { get; set; }
         public DateTime? DateB { get; set; }
+        public string PersonUrl { get; set; }
 
         public virtual ICollection<CharacterAnime> CharacterAnime { get; set; }
         public virtual ICollection<Personal> Personal { get; set; }

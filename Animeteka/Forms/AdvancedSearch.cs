@@ -76,7 +76,7 @@ namespace Animeteka.Forms
         }
 
         private bool CheckGenre(Anime a, CheckedListBox.CheckedItemCollection genres)
-        {
+        { 
             if (genres == null)
             {
                 return true;
@@ -86,6 +86,7 @@ namespace Animeteka.Forms
             HashSet<int> agenres = new HashSet<int>();
             foreach (var g in a.AnimeAndGenre)
             {
+                Console.WriteLine(g.Genre.GenreName); 
                 agenres.Add((int)g.GenreId);
             }
 

@@ -16,5 +16,17 @@ namespace Animeteka.Controls
         {
             InitializeComponent();
         }
+
+        public CharacterPreview(Characters character)
+        {
+            InitializeComponent();
+
+            if (character != null)
+            {
+                pictureBox1.LoadAsync(character.CharacterUrl);
+                label1.Text = character.CharacterName;
+                Console.WriteLine(pictureBox1.ImageLocation);
+            }
+        }
     }
 }

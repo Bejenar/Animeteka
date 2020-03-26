@@ -16,5 +16,18 @@ namespace Animeteka.Controls
         {
             InitializeComponent();
         }
+
+        public PersonPreview(Personal person)
+        {
+            InitializeComponent();
+
+            if (person != null)
+            {
+                pictureBox1.LoadAsync(person.Person.PersonUrl);
+                label1.Text = person.Person.PersonName;
+                label3.Text = person.Role.RoleName;
+                Console.WriteLine(pictureBox1.ImageLocation);
+            }
+        }
     }
 }

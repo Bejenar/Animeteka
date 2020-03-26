@@ -301,6 +301,8 @@ namespace Animeteka
 
                 entity.Property(e => e.CharacterId).HasColumnName("character_id");
 
+                entity.Property(e => e.CharacterUrl).HasColumnName("img_url");
+
                 entity.Property(e => e.CharacterName)
                     .IsRequired()
                     .HasColumnName("character_name")
@@ -343,6 +345,8 @@ namespace Animeteka
             modelBuilder.Entity<Person>(entity =>
             {
                 entity.Property(e => e.PersonId).HasColumnName("person_id");
+
+                entity.Property(e => e.PersonUrl).HasColumnName("img_url");
 
                 entity.Property(e => e.DateB)
                     .HasColumnName("dateB")

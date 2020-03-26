@@ -62,6 +62,8 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.MaximumSize = new System.Drawing.Size(174, 266);
+            this.MinimumSize = new System.Drawing.Size(174, 266);
             this.Name = "CharacterPreview";
             this.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.Size = new System.Drawing.Size(174, 266);

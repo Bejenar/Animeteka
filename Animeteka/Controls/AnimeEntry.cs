@@ -7,17 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Animeteka.Forms;
 
 namespace Animeteka.Controls
 {
     public partial class AnimeEntry : UserControl
     {
+        int anime_id;
+
         public AnimeEntry(Anime anime) // передаю сюда аниме из массива
         {
             InitializeComponent();
+            anime_id = anime.AnimeId;
 
             // и каждая новая созданная такая панелька заполняется разными данными
-            // сейчас скажу
 
             title.Text = anime.AnimeName;
             if(anime.Atype != null)
@@ -46,6 +49,16 @@ namespace Animeteka.Controls
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void title_Click(object sender, EventArgs e)
+        {
+            var frm = new AnimeInfo(anime_id);
+            frm.Location = this.FindForm().Location;
+            frm.StartPosition = FormStartPosition.Manual;
+            frm.FormClosing += delegate { this.FindForm().Show(); };
+            frm.Show();
+            this.FindForm().Hide();
         }
     }
 }

@@ -42,7 +42,7 @@
             // 
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 180);
+            this.panel1.Location = new System.Drawing.Point(0, 162);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(948, 7);
             this.panel1.TabIndex = 2;
@@ -93,7 +93,7 @@
             this.pictureBox1.Image = global::Animeteka.Properties.Resources.person_placeholder;
             this.pictureBox1.Location = new System.Drawing.Point(0, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(112, 175);
+            this.pictureBox1.Size = new System.Drawing.Size(96, 157);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -109,7 +109,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "PersonPreview";
             this.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.Size = new System.Drawing.Size(948, 187);
+            this.Size = new System.Drawing.Size(948, 169);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

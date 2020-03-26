@@ -13,6 +13,7 @@ namespace Animeteka
         public int CharacterId { get; set; }
         public string CharacterName { get; set; }
         public string CharacterNameEn { get; set; }
+        public string CharacterUrl { get; set; }
 
         public virtual ICollection<CharacterAnime> CharacterAnime { get; set; }
     }
