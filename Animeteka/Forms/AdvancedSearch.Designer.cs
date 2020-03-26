@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdvancedSearch));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.adsControl = new Animeteka.Controls.AdvancedSearchControl();
             this.panelEntry = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -37,6 +37,7 @@
             this.searchBox = new System.Windows.Forms.TextBox();
             this.button_search = new System.Windows.Forms.Button();
             this.backgroundEntryWorker = new System.ComponentModel.BackgroundWorker();
+            this.adsControl = new Animeteka.Controls.AdvancedSearchControl();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -46,7 +47,7 @@
             // panel1
             // 
             this.panel1.AutoSize = true;
-            this.panel1.BackColor = System.Drawing.Color.SeaShell;
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.adsControl);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(708, 100);
@@ -54,20 +55,10 @@
             this.panel1.Size = new System.Drawing.Size(240, 405);
             this.panel1.TabIndex = 10;
             // 
-            // adsControl
-            // 
-            this.adsControl.BackColor = System.Drawing.Color.Transparent;
-            this.adsControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.adsControl.Dock = System.Windows.Forms.DockStyle.Right;
-            this.adsControl.Location = new System.Drawing.Point(0, 0);
-            this.adsControl.Name = "adsControl";
-            this.adsControl.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.adsControl.Size = new System.Drawing.Size(240, 405);
-            this.adsControl.TabIndex = 9;
-            // 
             // panelEntry
             // 
             this.panelEntry.AutoScroll = true;
+            this.panelEntry.BackColor = System.Drawing.Color.White;
             this.panelEntry.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEntry.Location = new System.Drawing.Point(0, 100);
             this.panelEntry.Name = "panelEntry";
@@ -77,6 +68,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel3.BackgroundImage = global::Animeteka.Properties.Resources.login_bg;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
@@ -88,6 +81,7 @@
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.Controls.Add(this.panel);
             this.panel4.Controls.Add(this.button_search);
             this.panel4.Location = new System.Drawing.Point(38, 29);
@@ -119,7 +113,7 @@
             // 
             // button_search
             // 
-            this.button_search.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button_search.BackColor = System.Drawing.Color.Transparent;
             this.button_search.BackgroundImage = global::Animeteka.Properties.Resources.search;
             this.button_search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button_search.Dock = System.Windows.Forms.DockStyle.Right;
@@ -141,6 +135,15 @@
             this.backgroundEntryWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundEntryWorker_DoWork);
             this.backgroundEntryWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundEntryWorker_RunWorkerCompleted);
             // 
+            // adsControl
+            // 
+            this.adsControl.BackColor = System.Drawing.Color.Transparent;
+            this.adsControl.Dock = System.Windows.Forms.DockStyle.Right;
+            this.adsControl.Location = new System.Drawing.Point(0, 0);
+            this.adsControl.Name = "adsControl";
+            this.adsControl.Size = new System.Drawing.Size(240, 405);
+            this.adsControl.TabIndex = 9;
+            // 
             // AdvancedSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -150,8 +153,9 @@
             this.Controls.Add(this.panelEntry);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdvancedSearch";
-            this.Text = "AdvancedSearch";
+            this.Text = "AnimeOnly";
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);

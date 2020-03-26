@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnimeInfo));
             this.panelAnime = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.title = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.studioLabel = new System.Windows.Forms.Label();
             this.genresLabel = new System.Windows.Forms.Label();
             this.statusLabel = new System.Windows.Forms.Label();
@@ -40,7 +42,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelCharacters = new System.Windows.Forms.Panel();
             this.panelCast = new System.Windows.Forms.Panel();
-            this.title = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelAnime.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -71,6 +72,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(626, 320);
             this.panel2.TabIndex = 2;
+            // 
+            // title
+            // 
+            this.title.AutoSize = true;
+            this.title.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.title.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.title.Location = new System.Drawing.Point(21, 12);
+            this.title.Name = "title";
+            this.title.Size = new System.Drawing.Size(266, 18);
+            this.title.TabIndex = 6;
+            this.title.Text = "Стальной Алхимик: Братство";
             // 
             // studioLabel
             // 
@@ -172,17 +184,6 @@
             this.panelCast.Size = new System.Drawing.Size(931, 300);
             this.panelCast.TabIndex = 6;
             // 
-            // title
-            // 
-            this.title.AutoSize = true;
-            this.title.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.title.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.title.Location = new System.Drawing.Point(21, 12);
-            this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(266, 18);
-            this.title.TabIndex = 6;
-            this.title.Text = "Стальной Алхимик: Братство";
-            // 
             // AnimeInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,8 +194,9 @@
             this.Controls.Add(this.panelCast);
             this.Controls.Add(this.panelCharacters);
             this.Controls.Add(this.panelAnime);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AnimeInfo";
-            this.Text = "AnimeInfo";
+            this.Text = "AnimeOnly";
             this.panelAnime.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

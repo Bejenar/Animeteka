@@ -25,9 +25,9 @@ namespace Animeteka.Controls
 
             if (!chb.Checked)
             {
-                foreach(Control c in chb.Parent.Controls)
+                foreach(Control c in chb.Parent.Parent.Controls)
                 {
-                    if (!c.Equals(chb))
+                    if (!c.Equals(chb.Parent))
                     {
                         c.Visible = false;
                     }
@@ -35,7 +35,7 @@ namespace Animeteka.Controls
             }
             else
             {
-                foreach (Control c in chb.Parent.Controls)
+                foreach (Control c in chb.Parent.Parent.Controls)
                 {
                         c.Visible = true;
                 }

@@ -26,7 +26,9 @@ namespace Animeteka.Controls
             InitializeComponent();
 
             int i = 1;
+            int j = 1;
             Panel panel = null;
+            Panel mpanel = null;
 
             characters = Program.db.CharacterAnime
                             .Include(ch => ch.Character)
@@ -36,25 +38,54 @@ namespace Animeteka.Controls
 
             foreach(var ch in characters)
             {
-                if (!ids.Contains((int)ch.CharacterId))
+                if (ch.IsMain == null)
+                    continue;
+
+                if ((bool)ch.IsMain)
                 {
-                    ids.Add((int)ch.CharacterId);
-                    Console.WriteLine(ch.Character.CharacterName + " -  id - " + ch.CharacterId);
-                    if (i % 5 == 1)
+                    if (!ids.Contains((int)ch.CharacterId))
                     {
-                        panel = new Panel();
-                        panel3.Controls.Add(panel);
-                        panel.Dock = DockStyle.Top;
-                        panel.MinimumSize = new Size(100, 266);
-                        panel.BringToFront();
+                        ids.Add((int)ch.CharacterId);
+                        Console.WriteLine(ch.Character.CharacterName + " -  id - " + ch.CharacterId);
+                        if (j % 5 == 1)
+                        {
+                            mpanel = new Panel();
+                            panel6.Controls.Add(mpanel);
+                            mpanel.Dock = DockStyle.Top;
+                            mpanel.MinimumSize = new Size(100, 266);
+                            mpanel.BringToFront();
+                        }
+
+                        var character = new CharacterPreview(ch.Character);
+                        mpanel.Controls.Add(character);
+                        character.Dock = DockStyle.Left;
+                        j++;
+
                     }
-
-                    var character = new CharacterPreview(ch.Character);
-                    panel.Controls.Add(character);
-                    character.Dock = DockStyle.Left;
-                    i++;
-
                 }
+                else
+                {
+                    if (!ids.Contains((int)ch.CharacterId))
+                    {
+                        ids.Add((int)ch.CharacterId);
+                        Console.WriteLine(ch.Character.CharacterName + " -  id - " + ch.CharacterId);
+                        if (i % 5 == 1)
+                        {
+                            panel = new Panel();
+                            panel3.Controls.Add(panel);
+                            panel.Dock = DockStyle.Top;
+                            panel.MinimumSize = new Size(100, 266);
+                            panel.BringToFront();
+                        }
+
+                        var character = new CharacterPreview(ch.Character);
+                        panel.Controls.Add(character);
+                        character.Dock = DockStyle.Left;
+                        i++;
+
+                    }
+                }
+                
             }
         }
 

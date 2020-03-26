@@ -73,7 +73,8 @@ namespace Animeteka.Forms
         {
             panel.Visible = false;
             panel.Width = 10;
-            bunifuTransition2.ShowSync(panel);
+            panel.Visible = true;
+            //bunifuTransition2.ShowSync(panel);
 
         }
 
@@ -126,6 +127,11 @@ namespace Animeteka.Forms
                 ShowAnimePanel(panelButtonCharacter);
 
             enteredCharacter = true;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

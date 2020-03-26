@@ -35,6 +35,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Anime.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BCrypt.Net, Version=0.1.5073.29922, Culture=neutral, PublicKeyToken=6bcd409ee6bc9292, processorArchitecture=MSIL">
       <HintPath>..\packages\BCrypt-Official.0.1.109\lib\BCrypt.Net.dll</HintPath>
@@ -350,7 +353,13 @@
     <None Include="Resources\login_bg.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Anime.ico" />
     <Content Include="LICENSE.txt" />
+    <None Include="Resources\yoko.jpg" />
+    <None Include="Resources\naruto.jpg" />
+    <None Include="Resources\miyazaki.png" />
+    <None Include="Resources\ghibli.jpg" />
+    <None Include="Resources\castle.jpg" />
     <None Include="Resources\person_placeholder.jpg" />
     <None Include="Resources\ch_placeholder.jpg" />
   </ItemGroup>

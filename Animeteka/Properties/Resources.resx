@@ -145,4 +145,19 @@
   <data name="person_placeholder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\person_placeholder.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="castle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\castle.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ghibli" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ghibli.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="miyazaki" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\miyazaki.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="naruto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\naruto.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="yoko" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yoko.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

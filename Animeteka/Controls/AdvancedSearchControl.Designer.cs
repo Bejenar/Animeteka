@@ -30,29 +30,44 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.panel14 = new System.Windows.Forms.Panel();
             this.Status_check = new System.Windows.Forms.CheckBox();
             this.Status_release = new System.Windows.Forms.RadioButton();
             this.Status_airing = new System.Windows.Forms.RadioButton();
             this.Status_announced = new System.Windows.Forms.RadioButton();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
             this.Studio_check = new System.Windows.Forms.CheckBox();
             this.Studio = new System.Windows.Forms.ComboBox();
             this.genrePanel = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.Genre_check = new System.Windows.Forms.CheckBox();
             this.Genre = new System.Windows.Forms.CheckedListBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.Date_check = new System.Windows.Forms.CheckBox();
             this.DateFrom = new System.Windows.Forms.DateTimePicker();
             this.DateTo = new System.Windows.Forms.DateTimePicker();
             this.checkPanel = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.Type_check = new System.Windows.Forms.CheckBox();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.Type = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel13.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel11.SuspendLayout();
             this.genrePanel.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.checkPanel.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -64,7 +79,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.checkPanel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(5, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(231, 505);
             this.panel1.TabIndex = 1;
@@ -72,24 +87,44 @@
             // panel4
             // 
             this.panel4.AutoSize = true;
-            this.panel4.Controls.Add(this.Status_check);
+            this.panel4.Controls.Add(this.panel13);
             this.panel4.Controls.Add(this.Status_release);
             this.panel4.Controls.Add(this.Status_airing);
             this.panel4.Controls.Add(this.Status_announced);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 779);
+            this.panel4.Location = new System.Drawing.Point(0, 1175);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(214, 142);
+            this.panel4.Size = new System.Drawing.Size(214, 135);
             this.panel4.TabIndex = 17;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(235)))), ((int)(((byte)(239)))));
+            this.panel13.Controls.Add(this.panel14);
+            this.panel13.Controls.Add(this.Status_check);
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel13.Location = new System.Drawing.Point(0, 0);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(214, 31);
+            this.panel13.TabIndex = 13;
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.Gray;
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel14.Location = new System.Drawing.Point(0, 0);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(10, 31);
+            this.panel14.TabIndex = 0;
             // 
             // Status_check
             // 
             this.Status_check.AutoSize = true;
-            this.Status_check.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.Status_check.Location = new System.Drawing.Point(0, 3);
+            this.Status_check.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.Status_check.Location = new System.Drawing.Point(20, 4);
             this.Status_check.Name = "Status_check";
-            this.Status_check.Size = new System.Drawing.Size(91, 28);
+            this.Status_check.Size = new System.Drawing.Size(73, 22);
             this.Status_check.TabIndex = 9;
             this.Status_check.Text = "Статус";
             this.Status_check.UseVisualStyleBackColor = true;
@@ -98,10 +133,10 @@
             // Status_release
             // 
             this.Status_release.AutoSize = true;
-            this.Status_release.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.Status_release.Location = new System.Drawing.Point(0, 39);
+            this.Status_release.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Status_release.Location = new System.Drawing.Point(20, 39);
             this.Status_release.Name = "Status_release";
-            this.Status_release.Size = new System.Drawing.Size(88, 28);
+            this.Status_release.Size = new System.Drawing.Size(74, 21);
             this.Status_release.TabIndex = 10;
             this.Status_release.Text = "Вышло";
             this.Status_release.UseVisualStyleBackColor = true;
@@ -110,10 +145,10 @@
             // Status_airing
             // 
             this.Status_airing.AutoSize = true;
-            this.Status_airing.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.Status_airing.Location = new System.Drawing.Point(0, 75);
+            this.Status_airing.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Status_airing.Location = new System.Drawing.Point(20, 75);
             this.Status_airing.Name = "Status_airing";
-            this.Status_airing.Size = new System.Drawing.Size(107, 28);
+            this.Status_airing.Size = new System.Drawing.Size(86, 21);
             this.Status_airing.TabIndex = 11;
             this.Status_airing.Text = "Выходит";
             this.Status_airing.UseVisualStyleBackColor = true;
@@ -122,10 +157,10 @@
             // Status_announced
             // 
             this.Status_announced.AutoSize = true;
-            this.Status_announced.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.Status_announced.Location = new System.Drawing.Point(0, 111);
+            this.Status_announced.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Status_announced.Location = new System.Drawing.Point(20, 111);
             this.Status_announced.Name = "Status_announced";
-            this.Status_announced.Size = new System.Drawing.Size(160, 28);
+            this.Status_announced.Size = new System.Drawing.Size(123, 21);
             this.Status_announced.TabIndex = 12;
             this.Status_announced.Text = "Анонсировано";
             this.Status_announced.UseVisualStyleBackColor = true;
@@ -134,21 +169,42 @@
             // panel3
             // 
             this.panel3.AutoSize = true;
-            this.panel3.Controls.Add(this.Studio_check);
+            this.panel3.Controls.Add(this.panel11);
             this.panel3.Controls.Add(this.Studio);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 707);
+            this.panel3.Location = new System.Drawing.Point(0, 1105);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(214, 72);
+            this.panel3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.panel3.Size = new System.Drawing.Size(214, 70);
             this.panel3.TabIndex = 16;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(235)))), ((int)(((byte)(239)))));
+            this.panel11.Controls.Add(this.panel12);
+            this.panel11.Controls.Add(this.Studio_check);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel11.Location = new System.Drawing.Point(0, 0);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(214, 31);
+            this.panel11.TabIndex = 9;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.Gray;
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel12.Location = new System.Drawing.Point(0, 0);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(10, 31);
+            this.panel12.TabIndex = 0;
             // 
             // Studio_check
             // 
             this.Studio_check.AutoSize = true;
-            this.Studio_check.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.Studio_check.Location = new System.Drawing.Point(0, 3);
+            this.Studio_check.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.Studio_check.Location = new System.Drawing.Point(20, 4);
             this.Studio_check.Name = "Studio_check";
-            this.Studio_check.Size = new System.Drawing.Size(94, 28);
+            this.Studio_check.Size = new System.Drawing.Size(79, 22);
             this.Studio_check.TabIndex = 7;
             this.Studio_check.Text = "Студия";
             this.Studio_check.UseVisualStyleBackColor = true;
@@ -158,32 +214,53 @@
             // 
             this.Studio.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.Studio.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.Studio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.Studio.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.Studio.FormattingEnabled = true;
-            this.Studio.Location = new System.Drawing.Point(0, 37);
+            this.Studio.Location = new System.Drawing.Point(20, 37);
             this.Studio.Name = "Studio";
-            this.Studio.Size = new System.Drawing.Size(211, 32);
+            this.Studio.Size = new System.Drawing.Size(194, 25);
             this.Studio.TabIndex = 8;
             this.Studio.Visible = false;
             // 
             // genrePanel
             // 
             this.genrePanel.AutoSize = true;
-            this.genrePanel.Controls.Add(this.Genre_check);
+            this.genrePanel.Controls.Add(this.panel9);
             this.genrePanel.Controls.Add(this.Genre);
             this.genrePanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.genrePanel.Location = new System.Drawing.Point(0, 183);
+            this.genrePanel.Location = new System.Drawing.Point(0, 182);
             this.genrePanel.Name = "genrePanel";
-            this.genrePanel.Size = new System.Drawing.Size(214, 524);
+            this.genrePanel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.genrePanel.Size = new System.Drawing.Size(214, 923);
             this.genrePanel.TabIndex = 15;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(235)))), ((int)(((byte)(239)))));
+            this.panel9.Controls.Add(this.panel10);
+            this.panel9.Controls.Add(this.Genre_check);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(214, 31);
+            this.panel9.TabIndex = 7;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.Gray;
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel10.Location = new System.Drawing.Point(0, 0);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(10, 31);
+            this.panel10.TabIndex = 0;
             // 
             // Genre_check
             // 
             this.Genre_check.AutoSize = true;
-            this.Genre_check.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.Genre_check.Location = new System.Drawing.Point(0, 3);
+            this.Genre_check.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.Genre_check.Location = new System.Drawing.Point(20, 4);
             this.Genre_check.Name = "Genre_check";
-            this.Genre_check.Size = new System.Drawing.Size(77, 28);
+            this.Genre_check.Size = new System.Drawing.Size(67, 22);
             this.Genre_check.TabIndex = 6;
             this.Genre_check.Text = "Жанр";
             this.Genre_check.UseVisualStyleBackColor = true;
@@ -191,35 +268,57 @@
             // 
             // Genre
             // 
-            this.Genre.BackColor = System.Drawing.SystemColors.Control;
-            this.Genre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.Genre.BackColor = System.Drawing.Color.White;
+            this.Genre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Genre.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.Genre.FormattingEnabled = true;
             this.Genre.IntegralHeight = false;
-            this.Genre.Location = new System.Drawing.Point(0, 35);
+            this.Genre.Location = new System.Drawing.Point(20, 35);
             this.Genre.Name = "Genre";
-            this.Genre.Size = new System.Drawing.Size(211, 486);
+            this.Genre.Size = new System.Drawing.Size(194, 880);
             this.Genre.TabIndex = 5;
             this.Genre.Visible = false;
             // 
             // panel2
             // 
             this.panel2.AutoSize = true;
-            this.panel2.Controls.Add(this.Date_check);
+            this.panel2.Controls.Add(this.panel7);
             this.panel2.Controls.Add(this.DateFrom);
             this.panel2.Controls.Add(this.DateTo);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 72);
+            this.panel2.Location = new System.Drawing.Point(0, 70);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(214, 111);
+            this.panel2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.panel2.Size = new System.Drawing.Size(214, 112);
             this.panel2.TabIndex = 14;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(235)))), ((int)(((byte)(239)))));
+            this.panel7.Controls.Add(this.panel8);
+            this.panel7.Controls.Add(this.Date_check);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(214, 31);
+            this.panel7.TabIndex = 5;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Gray;
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(10, 31);
+            this.panel8.TabIndex = 0;
             // 
             // Date_check
             // 
             this.Date_check.AutoSize = true;
-            this.Date_check.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.Date_check.Location = new System.Drawing.Point(0, 6);
+            this.Date_check.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.Date_check.Location = new System.Drawing.Point(20, 4);
             this.Date_check.Name = "Date_check";
-            this.Date_check.Size = new System.Drawing.Size(145, 28);
+            this.Date_check.Size = new System.Drawing.Size(121, 22);
             this.Date_check.TabIndex = 2;
             this.Date_check.Text = "Дата выхода";
             this.Date_check.UseVisualStyleBackColor = true;
@@ -227,53 +326,74 @@
             // 
             // DateFrom
             // 
-            this.DateFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.DateFrom.Location = new System.Drawing.Point(0, 42);
+            this.DateFrom.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.DateFrom.Location = new System.Drawing.Point(20, 42);
             this.DateFrom.Name = "DateFrom";
-            this.DateFrom.Size = new System.Drawing.Size(211, 29);
+            this.DateFrom.Size = new System.Drawing.Size(194, 25);
             this.DateFrom.TabIndex = 3;
             this.DateFrom.Value = new System.DateTime(2000, 3, 21, 18, 14, 0, 0);
             this.DateFrom.Visible = false;
             // 
             // DateTo
             // 
-            this.DateTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.DateTo.Location = new System.Drawing.Point(3, 79);
+            this.DateTo.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.DateTo.Location = new System.Drawing.Point(20, 79);
             this.DateTo.Name = "DateTo";
-            this.DateTo.Size = new System.Drawing.Size(208, 29);
+            this.DateTo.Size = new System.Drawing.Size(194, 25);
             this.DateTo.TabIndex = 4;
             this.DateTo.Visible = false;
             // 
             // checkPanel
             // 
             this.checkPanel.AutoSize = true;
-            this.checkPanel.Controls.Add(this.Type_check);
+            this.checkPanel.Controls.Add(this.panel5);
             this.checkPanel.Controls.Add(this.Type);
             this.checkPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.checkPanel.Location = new System.Drawing.Point(0, 0);
             this.checkPanel.Name = "checkPanel";
-            this.checkPanel.Size = new System.Drawing.Size(214, 72);
+            this.checkPanel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.checkPanel.Size = new System.Drawing.Size(214, 70);
             this.checkPanel.TabIndex = 13;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(235)))), ((int)(((byte)(239)))));
+            this.panel5.Controls.Add(this.Type_check);
+            this.panel5.Controls.Add(this.panel6);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(214, 31);
+            this.panel5.TabIndex = 2;
             // 
             // Type_check
             // 
             this.Type_check.AutoSize = true;
-            this.Type_check.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Type_check.Location = new System.Drawing.Point(0, 3);
+            this.Type_check.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.Type_check.Location = new System.Drawing.Point(20, 4);
             this.Type_check.Name = "Type_check";
-            this.Type_check.Size = new System.Drawing.Size(63, 28);
+            this.Type_check.Size = new System.Drawing.Size(54, 22);
             this.Type_check.TabIndex = 0;
             this.Type_check.Text = "Тип";
             this.Type_check.UseVisualStyleBackColor = true;
             this.Type_check.CheckedChanged += new System.EventHandler(this.Type_check_CheckedChanged);
             // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Gray;
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(10, 31);
+            this.panel6.TabIndex = 0;
+            // 
             // Type
             // 
-            this.Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.Type.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.Type.FormattingEnabled = true;
-            this.Type.Location = new System.Drawing.Point(0, 37);
+            this.Type.Location = new System.Drawing.Point(20, 37);
             this.Type.Name = "Type";
-            this.Type.Size = new System.Drawing.Size(211, 32);
+            this.Type.Size = new System.Drawing.Size(194, 25);
             this.Type.TabIndex = 1;
             this.Type.Visible = false;
             // 
@@ -283,20 +403,25 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "AdvancedSearchControl";
-            this.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.Size = new System.Drawing.Size(236, 505);
+            this.Size = new System.Drawing.Size(231, 505);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
             this.genrePanel.ResumeLayout(false);
-            this.genrePanel.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.checkPanel.ResumeLayout(false);
-            this.checkPanel.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -322,5 +447,15 @@
         public System.Windows.Forms.Panel panel4;
         public System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.Panel genrePanel;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel6;
     }
 }
