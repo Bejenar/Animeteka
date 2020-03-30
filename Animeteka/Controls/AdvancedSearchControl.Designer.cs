@@ -28,33 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.components = new System.ComponentModel.Container();
+            this.panel1 = new Animeteka.Controls.CustomPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.Status_check = new System.Windows.Forms.CheckBox();
+            this.Status_check = new Animeteka.Controls.CustomCheckBox();
             this.Status_release = new System.Windows.Forms.RadioButton();
             this.Status_airing = new System.Windows.Forms.RadioButton();
             this.Status_announced = new System.Windows.Forms.RadioButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.Studio_check = new System.Windows.Forms.CheckBox();
+            this.Studio_check = new Animeteka.Controls.CustomCheckBox();
             this.Studio = new System.Windows.Forms.ComboBox();
             this.genrePanel = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.Genre_check = new System.Windows.Forms.CheckBox();
+            this.Genre_check = new Animeteka.Controls.CustomCheckBox();
             this.Genre = new System.Windows.Forms.CheckedListBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.Date_check = new System.Windows.Forms.CheckBox();
+            this.Date_check = new Animeteka.Controls.CustomCheckBox();
             this.DateFrom = new System.Windows.Forms.DateTimePicker();
             this.DateTo = new System.Windows.Forms.DateTimePicker();
             this.checkPanel = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.Type_check = new System.Windows.Forms.CheckBox();
+            this.Type_check = new Animeteka.Controls.CustomCheckBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.Type = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
@@ -120,13 +121,20 @@
             // 
             // Status_check
             // 
+            this.Status_check.Appearance = System.Windows.Forms.Appearance.Button;
             this.Status_check.AutoSize = true;
+            this.Status_check.BackColor = System.Drawing.Color.Transparent;
+            this.Status_check.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Status_check.FlatAppearance.BorderSize = 0;
+            this.Status_check.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Status_check.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.Status_check.Location = new System.Drawing.Point(20, 4);
+            this.Status_check.ImageIndex = 0;
+            this.Status_check.Location = new System.Drawing.Point(20, 1);
             this.Status_check.Name = "Status_check";
-            this.Status_check.Size = new System.Drawing.Size(73, 22);
+            this.Status_check.Size = new System.Drawing.Size(80, 28);
             this.Status_check.TabIndex = 9;
             this.Status_check.Text = "Статус";
+            this.Status_check.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Status_check.UseVisualStyleBackColor = true;
             this.Status_check.CheckedChanged += new System.EventHandler(this.Type_check_CheckedChanged);
             // 
@@ -200,13 +208,20 @@
             // 
             // Studio_check
             // 
+            this.Studio_check.Appearance = System.Windows.Forms.Appearance.Button;
             this.Studio_check.AutoSize = true;
+            this.Studio_check.BackColor = System.Drawing.Color.Transparent;
+            this.Studio_check.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Studio_check.FlatAppearance.BorderSize = 0;
+            this.Studio_check.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Studio_check.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.Studio_check.Location = new System.Drawing.Point(20, 4);
+            this.Studio_check.ImageIndex = 0;
+            this.Studio_check.Location = new System.Drawing.Point(20, 1);
             this.Studio_check.Name = "Studio_check";
-            this.Studio_check.Size = new System.Drawing.Size(79, 22);
+            this.Studio_check.Size = new System.Drawing.Size(86, 28);
             this.Studio_check.TabIndex = 7;
             this.Studio_check.Text = "Студия";
+            this.Studio_check.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Studio_check.UseVisualStyleBackColor = true;
             this.Studio_check.CheckedChanged += new System.EventHandler(this.Type_check_CheckedChanged);
             // 
@@ -256,13 +271,20 @@
             // 
             // Genre_check
             // 
+            this.Genre_check.Appearance = System.Windows.Forms.Appearance.Button;
             this.Genre_check.AutoSize = true;
+            this.Genre_check.BackColor = System.Drawing.Color.Transparent;
+            this.Genre_check.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Genre_check.FlatAppearance.BorderSize = 0;
+            this.Genre_check.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Genre_check.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.Genre_check.Location = new System.Drawing.Point(20, 4);
+            this.Genre_check.ImageIndex = 0;
+            this.Genre_check.Location = new System.Drawing.Point(20, 1);
             this.Genre_check.Name = "Genre_check";
-            this.Genre_check.Size = new System.Drawing.Size(67, 22);
+            this.Genre_check.Size = new System.Drawing.Size(74, 28);
             this.Genre_check.TabIndex = 6;
             this.Genre_check.Text = "Жанр";
+            this.Genre_check.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Genre_check.UseVisualStyleBackColor = true;
             this.Genre_check.CheckedChanged += new System.EventHandler(this.Type_check_CheckedChanged);
             // 
@@ -270,13 +292,17 @@
             // 
             this.Genre.BackColor = System.Drawing.Color.White;
             this.Genre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Genre.CheckOnClick = true;
             this.Genre.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.Genre.FormattingEnabled = true;
+            this.Genre.HorizontalScrollbar = true;
             this.Genre.IntegralHeight = false;
             this.Genre.Location = new System.Drawing.Point(20, 35);
             this.Genre.Name = "Genre";
             this.Genre.Size = new System.Drawing.Size(194, 880);
-            this.Genre.TabIndex = 5;
+            this.Genre.TabIndex = 0;
+            this.Genre.TabStop = false;
+            this.Genre.UseTabStops = false;
             this.Genre.Visible = false;
             // 
             // panel2
@@ -314,13 +340,20 @@
             // 
             // Date_check
             // 
+            this.Date_check.Appearance = System.Windows.Forms.Appearance.Button;
             this.Date_check.AutoSize = true;
+            this.Date_check.BackColor = System.Drawing.Color.Transparent;
+            this.Date_check.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Date_check.FlatAppearance.BorderSize = 0;
+            this.Date_check.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Date_check.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.Date_check.Location = new System.Drawing.Point(20, 4);
+            this.Date_check.ImageIndex = 0;
+            this.Date_check.Location = new System.Drawing.Point(20, 1);
             this.Date_check.Name = "Date_check";
-            this.Date_check.Size = new System.Drawing.Size(121, 22);
+            this.Date_check.Size = new System.Drawing.Size(128, 28);
             this.Date_check.TabIndex = 2;
             this.Date_check.Text = "Дата выхода";
+            this.Date_check.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Date_check.UseVisualStyleBackColor = true;
             this.Date_check.CheckedChanged += new System.EventHandler(this.Type_check_CheckedChanged);
             // 
@@ -368,13 +401,20 @@
             // 
             // Type_check
             // 
+            this.Type_check.Appearance = System.Windows.Forms.Appearance.Button;
             this.Type_check.AutoSize = true;
+            this.Type_check.BackColor = System.Drawing.Color.Transparent;
+            this.Type_check.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Type_check.FlatAppearance.BorderSize = 0;
+            this.Type_check.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Type_check.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.Type_check.Location = new System.Drawing.Point(20, 4);
+            this.Type_check.ImageIndex = 0;
+            this.Type_check.Location = new System.Drawing.Point(20, 1);
             this.Type_check.Name = "Type_check";
-            this.Type_check.Size = new System.Drawing.Size(54, 22);
+            this.Type_check.Size = new System.Drawing.Size(61, 28);
             this.Type_check.TabIndex = 0;
             this.Type_check.Text = "Тип";
+            this.Type_check.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Type_check.UseVisualStyleBackColor = true;
             this.Type_check.CheckedChanged += new System.EventHandler(this.Type_check_CheckedChanged);
             // 
@@ -428,20 +468,20 @@
 
         #endregion
 
-        public System.Windows.Forms.Panel panel1;
+        public CustomPanel panel1;
         public System.Windows.Forms.RadioButton Status_announced;
         public System.Windows.Forms.RadioButton Status_airing;
         public System.Windows.Forms.RadioButton Status_release;
-        public System.Windows.Forms.CheckBox Status_check;
+        public CustomCheckBox Status_check;
         public System.Windows.Forms.ComboBox Studio;
-        public System.Windows.Forms.CheckBox Studio_check;
+        public CustomCheckBox Studio_check;
         public System.Windows.Forms.CheckedListBox Genre;
-        public System.Windows.Forms.CheckBox Genre_check;
+        public CustomCheckBox Genre_check;
         public System.Windows.Forms.DateTimePicker DateTo;
         public System.Windows.Forms.DateTimePicker DateFrom;
-        public System.Windows.Forms.CheckBox Date_check;
+        public CustomCheckBox Date_check;
         public System.Windows.Forms.ComboBox Type;
-        public System.Windows.Forms.CheckBox Type_check;
+        public CustomCheckBox Type_check;
         public System.Windows.Forms.Panel checkPanel;
         public System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.Panel panel4;

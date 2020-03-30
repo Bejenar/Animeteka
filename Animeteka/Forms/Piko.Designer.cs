@@ -1,6 +1,6 @@
 ﻿namespace Animeteka.Forms
 {
-    partial class Form2
+    partial class Piko
     {
         /// <summary>
         /// Required designer variable.
@@ -28,35 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.animeFullEntry1 = new Animeteka.Controls.AnimeFullEntry();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Piko));
+            this.player = new AxWMPLib.AxWindowsMediaPlayer();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.SuspendLayout();
             // 
-            // animeFullEntry1
+            // player
             // 
-            this.animeFullEntry1.AutoSize = true;
-            this.animeFullEntry1.BackColor = System.Drawing.Color.White;
-            this.animeFullEntry1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.animeFullEntry1.Location = new System.Drawing.Point(0, 0);
-            this.animeFullEntry1.Name = "animeFullEntry1";
-            this.animeFullEntry1.Size = new System.Drawing.Size(1017, 901);
-            this.animeFullEntry1.TabIndex = 0;
+            this.player.Enabled = true;
+            this.player.Location = new System.Drawing.Point(-1, 1);
+            this.player.Name = "player";
+            this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
+            this.player.Size = new System.Drawing.Size(836, 500);
+            this.player.TabIndex = 0;
             // 
-            // Form2
+            // Piko
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1034, 486);
-            this.Controls.Add(this.animeFullEntry1);
-            this.Name = "Form2";
-            this.Text = "Form2";
+            this.ClientSize = new System.Drawing.Size(835, 439);
+            this.Controls.Add(this.player);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Piko";
+            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Controls.AnimeFullEntry animeFullEntry1;
+        private AxWMPLib.AxWindowsMediaPlayer player;
     }
 }

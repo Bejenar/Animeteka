@@ -55,6 +55,42 @@
     <Reference Include="Microsoft.Data.SqlClient, Version=1.0.19269.1, Culture=neutral, PublicKeyToken=23ec7fc2d6eaa4a5, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Data.SqlClient.1.0.19269.1\lib\net46\Microsoft.Data.SqlClient.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Windows\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\Microsoft.DirectX.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.AudioVideoPlayback, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Windows\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\Microsoft.DirectX.AudioVideoPlayback.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.Diagnostics, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Windows\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\Microsoft.DirectX.Diagnostics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.Direct3D, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Windows\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\Microsoft.DirectX.Direct3D.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.Direct3DX, Version=1.0.2911.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Windows\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\Microsoft.DirectX.Direct3DX.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.DirectDraw, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Windows\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\Microsoft.DirectX.DirectDraw.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.DirectInput, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Windows\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\Microsoft.DirectX.DirectInput.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.DirectPlay, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Windows\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\Microsoft.DirectX.DirectPlay.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.DirectSound, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Windows\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\Microsoft.DirectX.DirectSound.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.EntityFrameworkCore, Version=3.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.EntityFrameworkCore.3.1.2\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll</HintPath>
     </Reference>
@@ -198,6 +234,18 @@
     <Compile Include="Controls\CharacterPreview.Designer.cs">
       <DependentUpon>CharacterPreview.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\CustomCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomCheckBox.Designer.cs">
+      <DependentUpon>CustomCheckBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CustomPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomPanel.Designer.cs">
+      <DependentUpon>CustomPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\PersonPreview.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -223,6 +271,12 @@
     </Compile>
     <Compile Include="Forms\AdvancedSearch.Designer.cs">
       <DependentUpon>AdvancedSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AnimeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AnimeEdit.Designer.cs">
+      <DependentUpon>AnimeEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AnimeInfo.cs">
       <SubType>Form</SubType>
@@ -250,6 +304,12 @@
     </Compile>
     <Compile Include="Forms\Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Piko.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Piko.Designer.cs">
+      <DependentUpon>Piko.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\WelcomePage.cs">
       <SubType>Form</SubType>
@@ -286,6 +346,9 @@
     <EmbeddedResource Include="Forms\AdvancedSearch.resx">
       <DependentUpon>AdvancedSearch.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AnimeEdit.resx">
+      <DependentUpon>AnimeEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AnimeInfo.resx">
       <DependentUpon>AnimeInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -297,6 +360,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Piko.resx">
+      <DependentUpon>Piko.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WelcomePage.en.resx">
       <DependentUpon>WelcomePage.cs</DependentUpon>
@@ -355,6 +421,9 @@
   <ItemGroup>
     <Content Include="Anime.ico" />
     <Content Include="LICENSE.txt" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\minus.png" />
     <None Include="Resources\yoko.jpg" />
     <None Include="Resources\naruto.jpg" />
     <None Include="Resources\miyazaki.png" />
@@ -362,6 +431,25 @@
     <None Include="Resources\castle.jpg" />
     <None Include="Resources\person_placeholder.jpg" />
     <None Include="Resources\ch_placeholder.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

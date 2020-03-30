@@ -60,5 +60,15 @@ namespace Animeteka.Controls
             frm.Show();
             this.FindForm().Hide();
         }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Resize(object sender, EventArgs e)
+        {
+            title.MaximumSize = new Size(panel2.Width - 20, 0);
+        }
     }
 }

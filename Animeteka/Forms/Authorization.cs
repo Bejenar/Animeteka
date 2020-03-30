@@ -24,18 +24,35 @@ namespace Animeteka.Forms
 
             if (Hashing.ValidatePassword(password.Text, user.Password))
             {
-                var frm = new WelcomePage();
-                frm.Location = this.Location;
-                frm.StartPosition = FormStartPosition.Manual;
-                frm.FormClosing += delegate { Application.Exit(); };
-                frm.Show();
-                this.Hide();
+                // TODO: check roles tables
+                if(user.Login == "admin")
+                {
+                    Program.is_admin = true;
+                }
+
+                OpenWelcomePage();
             }
             else
             {
                 Console.WriteLine("wrong password");
             }
            
+        }
+
+        private void OpenWelcomePage()
+        {
+            var frm = new WelcomePage();
+            frm.Location = this.Location;
+            frm.StartPosition = FormStartPosition.Manual;
+            frm.FormClosing += delegate { Application.Exit(); };
+            frm.Show();
+            this.Hide();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenWelcomePage();
         }
     }
 }

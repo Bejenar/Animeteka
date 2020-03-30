@@ -10,6 +10,7 @@ namespace Animeteka
     static class Program
     {
         public static AnimetekaContext db;
+        public static bool is_admin = false;
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>

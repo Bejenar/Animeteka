@@ -49,7 +49,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(948, 34);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 1;
             // 
             // label1
             // 
@@ -58,7 +58,7 @@
             this.label1.Location = new System.Drawing.Point(21, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(157, 24);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 2;
             this.label1.Text = "Главные герои";
             // 
             // panel2
@@ -68,7 +68,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(16, 34);
-            this.panel2.TabIndex = 0;
+            this.panel2.TabIndex = 2;
             // 
             // panel6
             // 
@@ -78,7 +78,7 @@
             this.panel6.Name = "panel6";
             this.panel6.Padding = new System.Windows.Forms.Padding(10);
             this.panel6.Size = new System.Drawing.Size(948, 20);
-            this.panel6.TabIndex = 1;
+            this.panel6.TabIndex = 2;
             // 
             // panel4
             // 
@@ -89,7 +89,7 @@
             this.panel4.Location = new System.Drawing.Point(0, 54);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(948, 34);
-            this.panel4.TabIndex = 2;
+            this.panel4.TabIndex = 3;
             // 
             // label2
             // 
@@ -98,7 +98,7 @@
             this.label2.Location = new System.Drawing.Point(21, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(236, 24);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 2;
             this.label2.Text = "Второстепенные герои";
             // 
             // panel5
@@ -108,7 +108,7 @@
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(16, 34);
-            this.panel5.TabIndex = 0;
+            this.panel5.TabIndex = 10;
             // 
             // panel3
             // 
@@ -118,7 +118,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(10);
             this.panel3.Size = new System.Drawing.Size(948, 286);
-            this.panel3.TabIndex = 3;
+            this.panel3.TabIndex = 4;
             // 
             // AnimeCharacters
             // 

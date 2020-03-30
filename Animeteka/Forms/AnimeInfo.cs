@@ -18,11 +18,23 @@ namespace Animeteka.Forms
         public AnimeInfo()
         {
             InitializeComponent();
+
+            if (Program.is_admin)
+            {
+                Console.WriteLine("you are admin");
+                button1.Visible = true;
+            }
         }
 
         public AnimeInfo(int anime_id)
         {
             InitializeComponent();
+
+            if (Program.is_admin)
+            {
+                Console.WriteLine("you are admin");
+                button1.Visible = true;
+            }
 
             anime = Program.db.Anime
                 .Include(a => a.AnimeAndGenre)
@@ -58,6 +70,49 @@ namespace Animeteka.Forms
 
             // cast info panel
             panelCast.Controls.Add(new AnimeCast(anime.AnimeId));
+
+
+            //
+            panel3.Select();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenEditForm();
+        }
+
+        private void OpenEditForm()
+        {
+            var frm = new AnimeEdit(anime);
+            frm.Location = this.Location;
+            frm.StartPosition = FormStartPosition.Manual;
+            frm.FormClosing += delegate { this.Close(); };
+            frm.Show();
+            this.Hide();
+        }
+
+        private void panelCast_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void AnimeInfo_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var frm = new Piko();
+            frm.Location = this.Location;
+            frm.StartPosition = FormStartPosition.Manual;
+            frm.FormClosing += delegate { this.Show(); };
+            frm.Show();
+            this.Hide();
         }
     }
 }

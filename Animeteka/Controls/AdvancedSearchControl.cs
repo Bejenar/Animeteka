@@ -16,8 +16,11 @@ namespace Animeteka.Controls
 
         public AdvancedSearchControl()
         {
-            InitializeComponent(); 
+            InitializeComponent();
+            
         }
+
+
 
         private void Type_check_CheckedChanged(object sender, EventArgs e)
         {

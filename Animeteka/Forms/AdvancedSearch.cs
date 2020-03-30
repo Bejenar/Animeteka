@@ -34,7 +34,7 @@ namespace Animeteka.Forms
             {
                 adsControl.Genre.Items.Add(g);
             }
-            adsControl.Genre.SelectedItem = adsControl.Genre.Items[0];
+            //adsControl.Genre.SelectedItem = adsControl.Genre.Items[0];
 
             // populate studio filter
             var studios = Program.db.Studio.ToList();
@@ -47,32 +47,12 @@ namespace Animeteka.Forms
 
         private void button_search_Click(object sender, EventArgs e)
         {
-            var atitle = searchBox.Text;
+            backgroundEntryWorker.RunWorkerAsync();
+
             
-            var atype = (AnimeType)adsControl.Type.SelectedItem;
-            var astudio = (Studio)adsControl.Studio.SelectedItem;
-
-            var agenres = adsControl.Genre.CheckedItems;
-
-
-            animeEntries = Program.db.Anime
-                .Include(a => a.Atype)
-                .Include(a => a.Studio)
-                .Include(a => a.AnimeAndGenre)
-                .Where(a =>
-                    ((atitle == "") ? true : a.AnimeName.Contains(atitle))
-                && (adsControl.Type_check.Checked ? a.AtypeId == atype.AtypeId : true)
-                && (adsControl.Studio_check.Checked ? a.StudioId == astudio.StudioId : true)
-                && ((adsControl.Date_check.Checked) ? (a.AirDate.Value > adsControl.DateFrom.Value && a.AirDate.Value < adsControl.DateTo.Value) : true)
-                && (adsControl.Status_check.Checked ? (adsControl.Status_release.Checked ? (a.ReleaseDate != null) :
-                                              adsControl.Status_airing.Checked ? (a.ReleaseDate == null && a.AirDate < DateTime.Now) :
-                                              true) : true)
-                )
-                .AsEnumerable()
-                .Where(a => adsControl.Genre_check.Checked ? CheckGenre(a, agenres) : true);
             //.Select(anime => new { anime.AnimeName, anime.Atype.AtypeName, anime.AnimeAndGenre, anime.AirDate });
 
-            backgroundEntryWorker.RunWorkerAsync();
+            
         }
 
         private bool CheckGenre(Anime a, CheckedListBox.CheckedItemCollection genres)
@@ -114,9 +94,49 @@ namespace Animeteka.Forms
         {
             BeginInvoke(new MethodInvoker(delegate
             {
+                bunifuCircleProgressbar1.Visible = true;
+                bunifuCircleProgressbar1.Value = 0;
+
+            }));
+            string atitle = null;
+            AnimeType atype = null;
+            Studio astudio = null;
+            CheckedListBox.CheckedItemCollection agenres = null;
+
+            
+            BeginInvoke(new MethodInvoker(delegate
+            {
+                atitle = searchBox.Text;
+                atype = (AnimeType)adsControl.Type.SelectedItem;
+                astudio = (Studio)adsControl.Studio.SelectedItem;
+                agenres = adsControl.Genre.CheckedItems;
+
+            }));
+
+            animeEntries = Program.db.Anime
+                .Include(a => a.Atype)
+                .Include(a => a.Studio)
+                .Include(a => a.AnimeAndGenre)
+                .Where(a =>
+                    ((atitle == "") ? true : a.AnimeName.Contains(atitle))
+                && (adsControl.Type_check.Checked ? a.AtypeId == atype.AtypeId : true)
+                && (adsControl.Studio_check.Checked ? a.StudioId == astudio.StudioId : true)
+                && ((adsControl.Date_check.Checked) ? (a.AirDate.Value > adsControl.DateFrom.Value && a.AirDate.Value < adsControl.DateTo.Value) : true)
+                && (adsControl.Status_check.Checked ? (adsControl.Status_release.Checked ? (a.ReleaseDate != null) :
+                                              adsControl.Status_airing.Checked ? (a.ReleaseDate == null && a.AirDate < DateTime.Now) :
+                                              true) : true)
+                )
+                .AsEnumerable()
+                .Where(a => adsControl.Genre_check.Checked ? CheckGenre(a, agenres) : true);
+
+            backgroundEntryWorker.ReportProgress(10);
+
+            BeginInvoke(new MethodInvoker(delegate
+            {
                 panelEntry.Controls.Clear();
             }));
-            
+            float progress = 10;
+            float step = 90f / animeEntries.Count();
             foreach (var a in animeEntries)
             {
                 AnimeEntry entry = new AnimeEntry(a);
@@ -132,13 +152,29 @@ namespace Animeteka.Forms
                 System.Threading.Thread.Sleep(100);
                 
                 Console.WriteLine(">>>>>>>>>>>>>>  " + a.AnimeName);
-
+                progress += step;
+                backgroundEntryWorker.ReportProgress((int)progress);
             }
+
+            BeginInvoke(new MethodInvoker(delegate
+            {
+                bunifuCircleProgressbar1.Visible = false;
+            }));
         }
 
         private void backgroundEntryWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             Console.WriteLine(">>>>>>>>>>>>>>>> worker done");
+        }
+
+        private void backgroundEntryWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            bunifuCircleProgressbar1.Value = e.ProgressPercentage;
+        }
+
+        private void panel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
