@@ -84,25 +84,11 @@ namespace Animeteka.Forms
         private void OpenEditForm()
         {
             var frm = new AnimeEdit(anime);
-            frm.Location = this.Location;
-            frm.StartPosition = FormStartPosition.Manual;
+            //frm.Location = this.Location;
+            //frm.StartPosition = FormStartPosition.Manual;
             frm.FormClosing += delegate { this.Close(); };
             frm.Show();
             this.Hide();
-        }
-
-        private void panelCast_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void AnimeInfo_Load(object sender, EventArgs e)
-        {
         }
 
         private void button2_Click(object sender, EventArgs e)

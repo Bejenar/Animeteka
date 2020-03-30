@@ -10,7 +10,7 @@ namespace Animeteka
     static class Program
     {
         public static AnimetekaContext db;
-        public static bool is_admin = false;
+        public static bool is_admin = true;
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
@@ -20,7 +20,7 @@ namespace Animeteka
             db = new AnimetekaContext();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Authorization());
+            Application.Run(new AdvancedSearch());
         }
     }
 }

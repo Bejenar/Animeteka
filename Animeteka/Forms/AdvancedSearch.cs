@@ -47,12 +47,7 @@ namespace Animeteka.Forms
 
         private void button_search_Click(object sender, EventArgs e)
         {
-            backgroundEntryWorker.RunWorkerAsync();
-
-            
-            //.Select(anime => new { anime.AnimeName, anime.Atype.AtypeName, anime.AnimeAndGenre, anime.AirDate });
-
-            
+            AsyncWorker.RunWorkerAsync();
         }
 
         private bool CheckGenre(Anime a, CheckedListBox.CheckedItemCollection genres)
@@ -61,7 +56,6 @@ namespace Animeteka.Forms
             {
                 return true;
             }
-
             // since HashSet.Contains is O(1) time complexity 
             HashSet<int> agenres = new HashSet<int>();
             foreach (var g in a.AnimeAndGenre)
@@ -69,7 +63,6 @@ namespace Animeteka.Forms
                 Console.WriteLine(g.Genre.GenreName); 
                 agenres.Add((int)g.GenreId);
             }
-
 
             foreach(var g in genres)
             {
@@ -80,30 +73,18 @@ namespace Animeteka.Forms
                     return false;
                 }
             }
-
             // else add this title to result
             return true;
         }
 
-        private void animeEntry2_Load(object sender, EventArgs e)
+        private IEnumerable<Anime> GetAnimes()
         {
-            //animeEntry2.title.Text = "В тот раз я переродился как слизень жопы и украл героя щита из под подмышки";
-        }
-
-        private void backgroundEntryWorker_DoWork(object sender, DoWorkEventArgs e)
-        {
-            BeginInvoke(new MethodInvoker(delegate
-            {
-                bunifuCircleProgressbar1.Visible = true;
-                bunifuCircleProgressbar1.Value = 0;
-
-            }));
             string atitle = null;
             AnimeType atype = null;
             Studio astudio = null;
             CheckedListBox.CheckedItemCollection agenres = null;
 
-            
+
             BeginInvoke(new MethodInvoker(delegate
             {
                 atitle = searchBox.Text;
@@ -113,7 +94,7 @@ namespace Animeteka.Forms
 
             }));
 
-            animeEntries = Program.db.Anime
+            var animes = Program.db.Anime
                 .Include(a => a.Atype)
                 .Include(a => a.Studio)
                 .Include(a => a.AnimeAndGenre)
@@ -129,7 +110,20 @@ namespace Animeteka.Forms
                 .AsEnumerable()
                 .Where(a => adsControl.Genre_check.Checked ? CheckGenre(a, agenres) : true);
 
-            backgroundEntryWorker.ReportProgress(10);
+            return animes;
+        }
+
+        private void backgroundEntryWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BeginInvoke(new MethodInvoker(delegate
+            {
+                progressBar.Visible = true;
+                progressBar.Value = 0;
+
+            }));
+
+            animeEntries = GetAnimes();
+            AsyncWorker.ReportProgress(10);
 
             BeginInvoke(new MethodInvoker(delegate
             {
@@ -150,15 +144,14 @@ namespace Animeteka.Forms
                    entry.Visible = true;                 
                }));
                 System.Threading.Thread.Sleep(100);
-                
-                Console.WriteLine(">>>>>>>>>>>>>>  " + a.AnimeName);
+
                 progress += step;
-                backgroundEntryWorker.ReportProgress((int)progress);
+                AsyncWorker.ReportProgress((int)progress);
             }
 
             BeginInvoke(new MethodInvoker(delegate
             {
-                bunifuCircleProgressbar1.Visible = false;
+                progressBar.Visible = false;
             }));
         }
 
@@ -169,12 +162,7 @@ namespace Animeteka.Forms
 
         private void backgroundEntryWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            bunifuCircleProgressbar1.Value = e.ProgressPercentage;
-        }
-
-        private void panel_Paint(object sender, PaintEventArgs e)
-        {
-
+            progressBar.Value = e.ProgressPercentage;
         }
     }
 }

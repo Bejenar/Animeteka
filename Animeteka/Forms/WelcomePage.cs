@@ -46,8 +46,8 @@ namespace Animeteka.Forms
         private void button_advanced_Click(object sender, EventArgs e)
         {
             var frm = new AdvancedSearch();
-            frm.Location = this.Location;
-            frm.StartPosition = FormStartPosition.Manual;
+            //frm.Location = this.Location;
+            //frm.StartPosition = FormStartPosition.Manual;
             frm.FormClosing += delegate { this.Show(); };
             frm.Show();
             this.Hide();

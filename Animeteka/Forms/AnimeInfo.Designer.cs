@@ -91,7 +91,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(707, 34);
             this.panel3.TabIndex = 0;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // button1
             // 
@@ -239,7 +238,6 @@
             this.panelCast.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.panelCast.Size = new System.Drawing.Size(948, 300);
             this.panelCast.TabIndex = 6;
-            this.panelCast.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCast_Paint);
             // 
             // button2
             // 
@@ -271,7 +269,6 @@
             this.Name = "AnimeInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AnimeOnly";
-            this.Load += new System.EventHandler(this.AnimeInfo_Load);
             this.panelAnime.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

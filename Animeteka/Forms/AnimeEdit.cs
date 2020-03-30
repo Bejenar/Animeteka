@@ -44,9 +44,9 @@ namespace Animeteka.Forms
                 if(s.StudioId == anime.StudioId)
                     comboBox2.SelectedItem = comboBox2.Items[comboBox2.Items.Count - 1];
             }
-            comboBox2.SelectedItem = comboBox2.Items[0];
 
             dateTimePicker1.Value = (DateTime)anime.AirDate;
+            if(anime.ReleaseDate != null)
             dateTimePicker2.Value = (DateTime)anime.ReleaseDate;
             textBox7.Text += anime.EpDuration;
             textBox8.Text += anime.EpCount;
@@ -55,19 +55,19 @@ namespace Animeteka.Forms
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             anime.AnimeName = textBox1.Text;
+            anime.AnimeNameEn = textBox2.Text;
+            anime.Atype = (AnimeType)comboBox1.SelectedItem;
+            anime.Studio = (Studio)comboBox2.SelectedItem;
+            anime.AirDate = dateTimePicker1.Value;
+            anime.ReleaseDate = dateTimePicker2.Value;
+            anime.EpDuration = (short)Convert.ToInt32(textBox7.Text);
+            anime.EpCount = (short)Convert.ToInt32(textBox8.Text);
+            anime.EpAired = (short)Convert.ToInt32(textBox9.Text);
+            anime.AnimeUrl = textBox10.Text;
+
             Program.db.Anime.Update(anime);
         }
     }

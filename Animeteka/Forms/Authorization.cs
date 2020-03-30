@@ -42,8 +42,8 @@ namespace Animeteka.Forms
         private void OpenWelcomePage()
         {
             var frm = new WelcomePage();
-            frm.Location = this.Location;
-            frm.StartPosition = FormStartPosition.Manual;
+            //frm.Location = this.Location;
+            //frm.StartPosition = FormStartPosition.Manual;
             frm.FormClosing += delegate { Application.Exit(); };
             frm.Show();
             this.Hide();

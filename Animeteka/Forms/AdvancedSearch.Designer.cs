@@ -29,41 +29,32 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdvancedSearch));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.adsControl = new Animeteka.Controls.AdvancedSearchControl();
+            this.panelFilter = new System.Windows.Forms.Panel();
             this.panelEntry = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
-            this.panel = new System.Windows.Forms.Panel();
+            this.panelHeader = new System.Windows.Forms.Panel();
+            this.panelHeaderDiv = new System.Windows.Forms.Panel();
+            this.progressBar = new Bunifu.Framework.UI.BunifuCircleProgressbar();
+            this.panelSearch = new System.Windows.Forms.Panel();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.button_search = new System.Windows.Forms.Button();
-            this.backgroundEntryWorker = new System.ComponentModel.BackgroundWorker();
-            this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel.SuspendLayout();
+            this.AsyncWorker = new System.ComponentModel.BackgroundWorker();
+            this.adsControl = new Animeteka.Controls.AdvancedSearchControl();
+            this.panelFilter.SuspendLayout();
+            this.panelHeader.SuspendLayout();
+            this.panelHeaderDiv.SuspendLayout();
+            this.panelSearch.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelFilter
             // 
-            this.panel1.AutoSize = true;
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.adsControl);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(708, 63);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(240, 442);
-            this.panel1.TabIndex = 10;
-            // 
-            // adsControl
-            // 
-            this.adsControl.BackColor = System.Drawing.Color.Transparent;
-            this.adsControl.Dock = System.Windows.Forms.DockStyle.Right;
-            this.adsControl.Location = new System.Drawing.Point(0, 0);
-            this.adsControl.Name = "adsControl";
-            this.adsControl.Size = new System.Drawing.Size(240, 442);
-            this.adsControl.TabIndex = 9;
+            this.panelFilter.AutoSize = true;
+            this.panelFilter.BackColor = System.Drawing.Color.White;
+            this.panelFilter.Controls.Add(this.adsControl);
+            this.panelFilter.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelFilter.Location = new System.Drawing.Point(708, 63);
+            this.panelFilter.Name = "panelFilter";
+            this.panelFilter.Size = new System.Drawing.Size(240, 442);
+            this.panelFilter.TabIndex = 10;
             // 
             // panelEntry
             // 
@@ -75,66 +66,65 @@
             this.panelEntry.Size = new System.Drawing.Size(708, 442);
             this.panelEntry.TabIndex = 11;
             // 
-            // panel3
+            // panelHeader
             // 
-            this.panel3.BackColor = System.Drawing.Color.DimGray;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(948, 63);
-            this.panel3.TabIndex = 12;
+            this.panelHeader.BackColor = System.Drawing.Color.DimGray;
+            this.panelHeader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelHeader.Controls.Add(this.panelHeaderDiv);
+            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader.Location = new System.Drawing.Point(0, 0);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(948, 63);
+            this.panelHeader.TabIndex = 12;
             // 
-            // panel4
+            // panelHeaderDiv
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panelHeaderDiv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.BackColor = System.Drawing.Color.Transparent;
-            this.panel4.Controls.Add(this.bunifuCircleProgressbar1);
-            this.panel4.Controls.Add(this.panel);
-            this.panel4.Location = new System.Drawing.Point(38, 11);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(690, 40);
-            this.panel4.TabIndex = 1;
+            this.panelHeaderDiv.BackColor = System.Drawing.Color.Transparent;
+            this.panelHeaderDiv.Controls.Add(this.progressBar);
+            this.panelHeaderDiv.Controls.Add(this.panelSearch);
+            this.panelHeaderDiv.Location = new System.Drawing.Point(38, 11);
+            this.panelHeaderDiv.Name = "panelHeaderDiv";
+            this.panelHeaderDiv.Size = new System.Drawing.Size(690, 40);
+            this.panelHeaderDiv.TabIndex = 1;
             // 
-            // bunifuCircleProgressbar1
+            // progressBar
             // 
-            this.bunifuCircleProgressbar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuCircleProgressbar1.animated = true;
-            this.bunifuCircleProgressbar1.animationIterval = 7;
-            this.bunifuCircleProgressbar1.animationSpeed = 1;
-            this.bunifuCircleProgressbar1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCircleProgressbar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCircleProgressbar1.BackgroundImage")));
-            this.bunifuCircleProgressbar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.bunifuCircleProgressbar1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCircleProgressbar1.LabelVisible = false;
-            this.bunifuCircleProgressbar1.LineProgressThickness = 5;
-            this.bunifuCircleProgressbar1.LineThickness = 5;
-            this.bunifuCircleProgressbar1.Location = new System.Drawing.Point(636, -8);
-            this.bunifuCircleProgressbar1.Margin = new System.Windows.Forms.Padding(6);
-            this.bunifuCircleProgressbar1.MaxValue = 100;
-            this.bunifuCircleProgressbar1.Name = "bunifuCircleProgressbar1";
-            this.bunifuCircleProgressbar1.ProgressBackColor = System.Drawing.Color.Gainsboro;
-            this.bunifuCircleProgressbar1.ProgressColor = System.Drawing.Color.LightGreen;
-            this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(54, 54);
-            this.bunifuCircleProgressbar1.TabIndex = 10;
-            this.bunifuCircleProgressbar1.Value = 0;
-            this.bunifuCircleProgressbar1.Visible = false;
+            this.progressBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressBar.animated = true;
+            this.progressBar.animationIterval = 7;
+            this.progressBar.animationSpeed = 1;
+            this.progressBar.BackColor = System.Drawing.Color.Transparent;
+            this.progressBar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("progressBar.BackgroundImage")));
+            this.progressBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.progressBar.ForeColor = System.Drawing.Color.White;
+            this.progressBar.LabelVisible = false;
+            this.progressBar.LineProgressThickness = 5;
+            this.progressBar.LineThickness = 5;
+            this.progressBar.Location = new System.Drawing.Point(634, -5);
+            this.progressBar.Margin = new System.Windows.Forms.Padding(6);
+            this.progressBar.MaxValue = 100;
+            this.progressBar.Name = "progressBar";
+            this.progressBar.ProgressBackColor = System.Drawing.Color.Gainsboro;
+            this.progressBar.ProgressColor = System.Drawing.Color.LightGreen;
+            this.progressBar.Size = new System.Drawing.Size(50, 50);
+            this.progressBar.TabIndex = 10;
+            this.progressBar.Value = 0;
+            this.progressBar.Visible = false;
             // 
-            // panel
+            // panelSearch
             // 
-            this.panel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel.BackColor = System.Drawing.SystemColors.Window;
-            this.panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel.Controls.Add(this.searchBox);
-            this.panel.Controls.Add(this.button_search);
-            this.panel.Location = new System.Drawing.Point(9, 3);
-            this.panel.Name = "panel";
-            this.panel.Padding = new System.Windows.Forms.Padding(10, 10, 10, 3);
-            this.panel.Size = new System.Drawing.Size(623, 36);
-            this.panel.TabIndex = 9;
-            this.panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Paint);
+            this.panelSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelSearch.BackColor = System.Drawing.SystemColors.Window;
+            this.panelSearch.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelSearch.Controls.Add(this.searchBox);
+            this.panelSearch.Controls.Add(this.button_search);
+            this.panelSearch.Location = new System.Drawing.Point(9, 3);
+            this.panelSearch.Name = "panelSearch";
+            this.panelSearch.Padding = new System.Windows.Forms.Padding(10, 10, 10, 3);
+            this.panelSearch.Size = new System.Drawing.Size(623, 36);
+            this.panelSearch.TabIndex = 9;
             // 
             // searchBox
             // 
@@ -159,19 +149,29 @@
             this.button_search.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
             this.button_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_search.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button_search.Location = new System.Drawing.Point(586, -1);
+            this.button_search.Location = new System.Drawing.Point(586, 0);
             this.button_search.Name = "button_search";
-            this.button_search.Size = new System.Drawing.Size(35, 35);
+            this.button_search.Size = new System.Drawing.Size(33, 33);
             this.button_search.TabIndex = 8;
             this.button_search.UseVisualStyleBackColor = false;
             this.button_search.Click += new System.EventHandler(this.button_search_Click);
             // 
-            // backgroundEntryWorker
+            // AsyncWorker
             // 
-            this.backgroundEntryWorker.WorkerReportsProgress = true;
-            this.backgroundEntryWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundEntryWorker_DoWork);
-            this.backgroundEntryWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundEntryWorker_ProgressChanged);
-            this.backgroundEntryWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundEntryWorker_RunWorkerCompleted);
+            this.AsyncWorker.WorkerReportsProgress = true;
+            this.AsyncWorker.WorkerSupportsCancellation = true;
+            this.AsyncWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundEntryWorker_DoWork);
+            this.AsyncWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundEntryWorker_ProgressChanged);
+            this.AsyncWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundEntryWorker_RunWorkerCompleted);
+            // 
+            // adsControl
+            // 
+            this.adsControl.BackColor = System.Drawing.Color.Transparent;
+            this.adsControl.Dock = System.Windows.Forms.DockStyle.Right;
+            this.adsControl.Location = new System.Drawing.Point(0, 0);
+            this.adsControl.Name = "adsControl";
+            this.adsControl.Size = new System.Drawing.Size(240, 442);
+            this.adsControl.TabIndex = 9;
             // 
             // AdvancedSearch
             // 
@@ -180,17 +180,17 @@
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(948, 505);
             this.Controls.Add(this.panelEntry);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panelFilter);
+            this.Controls.Add(this.panelHeader);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdvancedSearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AnimeOnly";
-            this.panel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel.ResumeLayout(false);
-            this.panel.PerformLayout();
+            this.panelFilter.ResumeLayout(false);
+            this.panelHeader.ResumeLayout(false);
+            this.panelHeaderDiv.ResumeLayout(false);
+            this.panelSearch.ResumeLayout(false);
+            this.panelSearch.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,14 +199,14 @@
         #endregion
         private Controls.AdvancedSearchControl advancedSearchControl;
         private Controls.AdvancedSearchControl adsControl;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelFilter;
         private System.Windows.Forms.Panel panelEntry;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel;
+        private System.Windows.Forms.Panel panelHeader;
+        private System.Windows.Forms.Panel panelSearch;
         private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.Button button_search;
-        private System.Windows.Forms.Panel panel4;
-        private System.ComponentModel.BackgroundWorker backgroundEntryWorker;
-        private Bunifu.Framework.UI.BunifuCircleProgressbar bunifuCircleProgressbar1;
+        private System.Windows.Forms.Panel panelHeaderDiv;
+        private System.ComponentModel.BackgroundWorker AsyncWorker;
+        private Bunifu.Framework.UI.BunifuCircleProgressbar progressBar;
     }
 }

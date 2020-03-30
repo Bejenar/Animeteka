@@ -29,5 +29,17 @@ namespace Animeteka.Controls
                 Console.WriteLine(pictureBox1.ImageLocation);
             }
         }
+
+        public PersonPreview(Person person)
+        {
+            InitializeComponent();
+
+            if(person != null)
+            {
+                pictureBox1.LoadAsync(person.PersonUrl);
+                label1.Text = person.PersonName;
+                label3.Text = "Сейю";
+            }
+        }
     }
 }

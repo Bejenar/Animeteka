@@ -82,7 +82,6 @@
             this.label1.Size = new System.Drawing.Size(65, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Название";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox1
             // 
@@ -90,7 +89,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(295, 22);
             this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // panel1
             // 

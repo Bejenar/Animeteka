@@ -23,12 +23,19 @@ namespace Animeteka.Controls
             // и каждая новая созданная такая панелька заполняется разными данными
 
             title.Text = anime.AnimeName;
-            if(anime.Atype != null)
-            type.Text = anime.Atype.AtypeName;
-            if(anime.Studio != null)
-            studio.Text = anime.Studio.StudioName;
+            if (anime.Atype != null)
+                type.Text = anime.Atype.AtypeName;
+            if (anime.Studio != null)
+                studio.Text = anime.Studio.StudioName;
             year.Text = "Год: " + anime.AirDate.Value.Year;
-            pictureBox1.Load(anime.AnimeUrl);
+            try {
+                pictureBox1.Load(anime.AnimeUrl);
+
+            }
+            catch
+            {
+
+            }
         }
 
         private void bunifuCustomLabel3_Click(object sender, EventArgs e)
