@@ -30,16 +30,16 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,17 +61,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(948, 210);
             this.panel2.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.AutoSize = true;
-            this.panel3.Controls.Add(this.panel6);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 487);
-            this.panel3.MinimumSize = new System.Drawing.Size(0, 210);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(948, 210);
-            this.panel3.TabIndex = 2;
             // 
             // panel4
             // 
@@ -102,6 +91,17 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(16, 34);
             this.panel5.TabIndex = 2;
+            // 
+            // panel3
+            // 
+            this.panel3.AutoSize = true;
+            this.panel3.Controls.Add(this.panel6);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 487);
+            this.panel3.MinimumSize = new System.Drawing.Size(0, 210);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(948, 210);
+            this.panel3.TabIndex = 2;
             // 
             // panel6
             // 
@@ -147,9 +147,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CharacterInfo";
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.ResumeLayout(false);

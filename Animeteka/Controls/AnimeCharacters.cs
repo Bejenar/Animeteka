@@ -46,7 +46,7 @@ namespace Animeteka.Controls
                     if (!ids.Contains((int)ch.CharacterId))
                     {
                         ids.Add((int)ch.CharacterId);
-                        Console.WriteLine(ch.Character.CharacterName + " -  id - " + ch.CharacterId);
+                        /*Console.WriteLine(ch.Character.CharacterName + " -  id - " + ch.CharacterId);
                         if (j % 5 == 1)
                         {
                             mpanel = new Panel();
@@ -59,7 +59,9 @@ namespace Animeteka.Controls
                         var character = new CharacterPreview(ch.Character);
                         mpanel.Controls.Add(character);
                         character.Dock = DockStyle.Left;
-                        j++;
+                        j++;*/
+                        var character = new CharacterPreview(ch.Character);
+                        flowLayoutPanel1.Controls.Add(character);
 
                     }
                 }
@@ -68,7 +70,7 @@ namespace Animeteka.Controls
                     if (!ids.Contains((int)ch.CharacterId))
                     {
                         ids.Add((int)ch.CharacterId);
-                        Console.WriteLine(ch.Character.CharacterName + " -  id - " + ch.CharacterId);
+                        /*Console.WriteLine(ch.Character.CharacterName + " -  id - " + ch.CharacterId);
                         if (i % 5 == 1)
                         {
                             panel = new Panel();
@@ -81,7 +83,9 @@ namespace Animeteka.Controls
                         var character = new CharacterPreview(ch.Character);
                         panel.Controls.Add(character);
                         character.Dock = DockStyle.Left;
-                        i++;
+                        i++;*/
+                        var character = new CharacterPreview(ch.Character);
+                        flowLayoutPanel2.Controls.Add(character);
 
                     }
                 }

@@ -27,35 +27,16 @@ namespace Animeteka.Controls
                 type.Text = anime.Atype.AtypeName;
             if (anime.Studio != null)
                 studio.Text = anime.Studio.StudioName;
-            year.Text = "Год: " + anime.AirDate.Value.Year;
-            try {
+            
+            try
+            {
+                year.Text = "Год: " + anime.AirDate.Value.Year;
                 pictureBox1.Load(anime.AnimeUrl);
-
             }
             catch
             {
 
             }
-        }
-
-        private void bunifuCustomLabel3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AnimeEntry_Paint(object sender, PaintEventArgs e)
-        {
-            //Console.WriteLine(">>>>>>>>>drawing a line");
-        }
-
-        private void AnimeEntry_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void title_Click(object sender, EventArgs e)
@@ -66,11 +47,6 @@ namespace Animeteka.Controls
             frm.FormClosing += delegate { this.FindForm().Show(); };
             frm.Show();
             this.FindForm().Hide();
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void panel2_Resize(object sender, EventArgs e)

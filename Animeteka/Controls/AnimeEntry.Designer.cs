@@ -79,7 +79,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(713, 150);
             this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             this.panel2.Resize += new System.EventHandler(this.panel2_Resize);
             // 
             // studio
@@ -131,7 +130,6 @@
             this.year.Size = new System.Drawing.Size(95, 28);
             this.year.TabIndex = 2;
             this.year.Text = "Год: 2009";
-            this.year.Click += new System.EventHandler(this.bunifuCustomLabel3_Click);
             // 
             // type
             // 
@@ -153,7 +151,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(713, 150);
             this.panel3.TabIndex = 2;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // panel4
             // 
@@ -185,8 +182,6 @@
             this.Name = "AnimeEntry";
             this.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.Size = new System.Drawing.Size(813, 167);
-            this.Load += new System.EventHandler(this.AnimeEntry_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.AnimeEntry_Paint);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
