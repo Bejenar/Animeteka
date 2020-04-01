@@ -15,6 +15,9 @@ namespace Animeteka.Forms
     public partial class AdvancedSearch : Form
     {
         IEnumerable<Anime> animeEntries;
+        int pages = 0;
+        int pageIndex = 0;
+        int entriesPerPage = 40;
 
         public AdvancedSearch()
         {
@@ -84,14 +87,12 @@ namespace Animeteka.Forms
             Studio astudio = null;
             CheckedListBox.CheckedItemCollection agenres = null;
 
-
             BeginInvoke(new MethodInvoker(delegate
             {
                 atitle = searchBox.Text;
                 atype = (AnimeType)adsControl.Type.SelectedItem;
                 astudio = (Studio)adsControl.Studio.SelectedItem;
                 agenres = adsControl.Genre.CheckedItems;
-
             }));
 
             var animes = Program.db.Anime
@@ -119,34 +120,53 @@ namespace Animeteka.Forms
             {
                 progressBar.Visible = true;
                 progressBar.Value = 0;
-
+                pageIndex = 0;
             }));
 
             animeEntries = GetAnimes();
+            pages = (int)Math.Ceiling(animeEntries.Count() * 1.0 / entriesPerPage);
             AsyncWorker.ReportProgress(10);
+
+            LoadPage.RunWorkerAsync();
+        }
+
+
+        private void LoadPage_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BeginInvoke(new MethodInvoker(delegate
+            {
+                progressBar.Visible = true;
+                progressBar.Value = 0;
+                label1.Text = (pageIndex + 1) + "/" + pages;
+
+            }));
+
+            var animes = animeEntries.Skip(pageIndex * entriesPerPage).Take(entriesPerPage);
+            LoadPage.ReportProgress(10);
 
             BeginInvoke(new MethodInvoker(delegate
             {
                 panelEntry.Controls.Clear();
             }));
+
             float progress = 10;
-            float step = 90f / animeEntries.Count();
-            foreach (var a in animeEntries)
+            float step = 90f / animes.Count();
+            foreach (var a in animes)
             {
                 AnimeEntry entry = new AnimeEntry(a);
                 entry.Dock = DockStyle.Top;
-                
+
                 BeginInvoke(new MethodInvoker(delegate
-               {
-                   entry.Visible = false;
-                   panelEntry.Controls.Add(entry);
-                   entry.BringToFront();  // entry.BringToFront(); - to add controls in correct order
-                   entry.Visible = true;                 
-               }));
+                {
+                    entry.Visible = false;
+                    panelEntry.Controls.Add(entry);
+                    entry.BringToFront();  // entry.BringToFront(); - to add controls in correct order
+                    entry.Visible = true;
+                }));
                 System.Threading.Thread.Sleep(100);
 
                 progress += step;
-                AsyncWorker.ReportProgress((int)progress);
+                LoadPage.ReportProgress((int)progress);
             }
 
             BeginInvoke(new MethodInvoker(delegate
@@ -155,6 +175,34 @@ namespace Animeteka.Forms
             }));
         }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         private void backgroundEntryWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             Console.WriteLine(">>>>>>>>>>>>>>>> worker done");
@@ -162,7 +210,30 @@ namespace Animeteka.Forms
 
         private void backgroundEntryWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            progressBar.Value = e.ProgressPercentage;
+            BeginInvoke(new MethodInvoker(delegate
+            {
+                progressBar.Value = e.ProgressPercentage;
+            }));
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (pageIndex < pages - 1)
+            {
+                pageIndex++;
+                label1.Text = (pageIndex + 1) + "/" + pages; 
+                LoadPage.RunWorkerAsync();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (pageIndex > 0)
+            {
+                pageIndex--;
+                label1.Text = (pageIndex + 1) + "/" + pages;
+                LoadPage.RunWorkerAsync();
+            }
         }
     }
 }

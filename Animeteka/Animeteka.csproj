@@ -228,6 +228,24 @@
     <Compile Include="Controls\AnimeFullEntry.Designer.cs">
       <DependentUpon>AnimeFullEntry.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\AnimePreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AnimePreview.Designer.cs">
+      <DependentUpon>AnimePreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AnimeWork.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AnimeWork.Designer.cs">
+      <DependentUpon>AnimeWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CharacterInAnimes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CharacterInAnimes.Designer.cs">
+      <DependentUpon>CharacterInAnimes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\CharacterPreview.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -245,6 +263,12 @@
     </Compile>
     <Compile Include="Controls\CustomPanel.Designer.cs">
       <DependentUpon>CustomPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HidePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\HidePanel.Designer.cs">
+      <DependentUpon>HidePanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\PersonPreview.cs">
       <SubType>UserControl</SubType>
@@ -349,8 +373,20 @@
     <EmbeddedResource Include="Controls\AnimeFullEntry.resx">
       <DependentUpon>AnimeFullEntry.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AnimePreview.resx">
+      <DependentUpon>AnimePreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AnimeWork.resx">
+      <DependentUpon>AnimeWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CharacterInAnimes.resx">
+      <DependentUpon>CharacterInAnimes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\CharacterPreview.resx">
       <DependentUpon>CharacterPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HidePanel.resx">
+      <DependentUpon>HidePanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\PersonPreview.resx">
       <DependentUpon>PersonPreview.cs</DependentUpon>

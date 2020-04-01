@@ -38,11 +38,17 @@
             this.searchBox = new System.Windows.Forms.TextBox();
             this.button_search = new System.Windows.Forms.Button();
             this.AsyncWorker = new System.ComponentModel.BackgroundWorker();
+            this.LoadPage = new System.ComponentModel.BackgroundWorker();
+            this.panelPage = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.adsControl = new Animeteka.Controls.AdvancedSearchControl();
             this.panelFilter.SuspendLayout();
             this.panelHeader.SuspendLayout();
             this.panelHeaderDiv.SuspendLayout();
             this.panelSearch.SuspendLayout();
+            this.panelPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelFilter
@@ -63,7 +69,7 @@
             this.panelEntry.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEntry.Location = new System.Drawing.Point(0, 63);
             this.panelEntry.Name = "panelEntry";
-            this.panelEntry.Size = new System.Drawing.Size(708, 442);
+            this.panelEntry.Size = new System.Drawing.Size(708, 407);
             this.panelEntry.TabIndex = 11;
             // 
             // panelHeader
@@ -164,6 +170,53 @@
             this.AsyncWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundEntryWorker_ProgressChanged);
             this.AsyncWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundEntryWorker_RunWorkerCompleted);
             // 
+            // LoadPage
+            // 
+            this.LoadPage.WorkerReportsProgress = true;
+            this.LoadPage.WorkerSupportsCancellation = true;
+            this.LoadPage.DoWork += new System.ComponentModel.DoWorkEventHandler(this.LoadPage_DoWork);
+            this.LoadPage.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundEntryWorker_ProgressChanged);
+            // 
+            // panelPage
+            // 
+            this.panelPage.BackColor = System.Drawing.Color.White;
+            this.panelPage.Controls.Add(this.label1);
+            this.panelPage.Controls.Add(this.button2);
+            this.panelPage.Controls.Add(this.button1);
+            this.panelPage.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelPage.Location = new System.Drawing.Point(0, 470);
+            this.panelPage.Name = "panelPage";
+            this.panelPage.Size = new System.Drawing.Size(708, 35);
+            this.panelPage.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(398, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Вперёд";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(236, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Назад";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(334, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 2;
+            // 
             // adsControl
             // 
             this.adsControl.BackColor = System.Drawing.Color.Transparent;
@@ -180,6 +233,7 @@
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(948, 505);
             this.Controls.Add(this.panelEntry);
+            this.Controls.Add(this.panelPage);
             this.Controls.Add(this.panelFilter);
             this.Controls.Add(this.panelHeader);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -191,6 +245,8 @@
             this.panelHeaderDiv.ResumeLayout(false);
             this.panelSearch.ResumeLayout(false);
             this.panelSearch.PerformLayout();
+            this.panelPage.ResumeLayout(false);
+            this.panelPage.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,5 +264,10 @@
         private System.Windows.Forms.Panel panelHeaderDiv;
         private System.ComponentModel.BackgroundWorker AsyncWorker;
         private Bunifu.Framework.UI.BunifuCircleProgressbar progressBar;
+        private System.ComponentModel.BackgroundWorker LoadPage;
+        private System.Windows.Forms.Panel panelPage;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

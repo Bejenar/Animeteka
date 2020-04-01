@@ -8,14 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Animeteka.Controls;
+using Microsoft.EntityFrameworkCore;
 
 namespace Animeteka.Forms
 {
     public partial class PersonInfo : Form
     {
         Person person;
-        ICollection<Anime> works;
-        ICollection<Characters> roles;
+        ICollection<Personal> works;
+        //ICollection<Characters> roles;
 
         public PersonInfo()
         {
@@ -51,7 +52,7 @@ namespace Animeteka.Forms
                         .Count() }
                 }
                         
-                        ).OrderBy(c => c.count, Comparer<int>.Create((o1, o2) => o2 - o1) ).ToList();
+                        ).OrderBy(c => c.count, Comparer<int>.Create((o1, o2) => o2 - o1) ).Take(3).ToList();
 
             foreach (var a in rolesCount)
             {
@@ -68,32 +69,33 @@ namespace Animeteka.Forms
 
             //works
             works = Program.db.Personal
+                        .Include(p => p.Anime)
+                            .ThenInclude(a => a.Atype)
+                        .Include(p => p.Role)
                         .Where(p => p.PersonId == person.PersonId)
-                        .Select(a => a.Anime)
                         .ToList();
 
             works = works
                 .Distinct()
                 .ToList();
 
-            foreach (var a in works)
+            foreach (var work in works)
             {
-                flowLayoutPanel1.Controls.Add(new AnimeEntry(a));
+                flowLayoutPanel1.Controls.Add(new AnimeWork(work));
             }
 
             //roles 
-            roles = Program.db.CharacterAnime
+            var roles = Program.db.CharacterAnime
+                    .Include(ca => ca.Anime)
+                    .Include(ca => ca.Character)
                     .Where(p => p.PersonId == person.PersonId)
-                    .Select(c => c.Character)
+                    .AsEnumerable()
+                    .GroupBy(ca => ca.CharacterId)
                     .ToList();
 
-            roles = roles
-                .Distinct()
-                .ToList();
-
-            foreach (var r in roles)
+            foreach (var c in roles)
             {
-                flowLayoutPanel2.Controls.Add(new CharacterPreview(r));
+                flowLayoutPanel2.Controls.Add(new CharacterInAnimes(c));
             }
 
         }
@@ -122,6 +124,30 @@ namespace Animeteka.Forms
         private void panel12_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            if (flowLayoutPanel1.Visible)
+            {
+                flowLayoutPanel1.Visible = false;
+            }
+            else
+            {
+                flowLayoutPanel1.Visible = true;
+            }
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            if (flowLayoutPanel2.Visible)
+            {
+                flowLayoutPanel2.Visible = false;
+            }
+            else
+            {
+                flowLayoutPanel2.Visible = true;
+            }
         }
     }
 }
