@@ -10,5 +10,10 @@ namespace Animeteka
 
         public virtual Anime Anime { get; set; }
         public virtual Genre Genre { get; set; }
+
+        public override string ToString()
+        {
+            return Genre.GenreName ?? GenreId.ToString();
+        }
     }
 }

@@ -32,6 +32,10 @@ namespace Animeteka.Forms
             this.WindowState = FormWindowState.Normal;
             this.Controls.Clear();
             this.InitializeComponent();
+
+            русскийToolStripMenuItem.Checked = false;
+            английскийToolStripMenuItem.Checked = true;
+            日本語ToolStripMenuItem.Checked = false;
         }
 
         private void русскийToolStripMenuItem_Click(object sender, EventArgs e)
@@ -41,6 +45,10 @@ namespace Animeteka.Forms
             this.WindowState = FormWindowState.Normal;
             this.Controls.Clear();
             this.InitializeComponent();
+
+            русскийToolStripMenuItem.Checked = true;
+            английскийToolStripMenuItem.Checked = false;
+            日本語ToolStripMenuItem.Checked = false;
         }
 
         private void button_advanced_Click(object sender, EventArgs e)
@@ -132,6 +140,30 @@ namespace Animeteka.Forms
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void количествоПроизведенийКонкретногоЖанраToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new Form2();
+            frm.Show();
+        }
+
+        private void 日本語ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Threading.Thread.CurrentThread.CurrentUICulture =
+    System.Globalization.CultureInfo.GetCultureInfo("ja");
+            this.WindowState = FormWindowState.Normal;
+            this.Controls.Clear();
+            this.InitializeComponent();
+
+            русскийToolStripMenuItem.Checked = false;
+            английскийToolStripMenuItem.Checked = false;
+            日本語ToolStripMenuItem.Checked = true;
+        }
+
+        private void WelcomePage_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

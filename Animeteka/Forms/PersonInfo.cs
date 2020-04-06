@@ -32,6 +32,7 @@ namespace Animeteka.Forms
             pictureBox1.LoadAsync(person.PersonUrl);
             labelName.Text = person.PersonName;
             labelNameEn.Text = person.PersonNameEn;
+            if (person.DateB != null)
             labelBirthday.Text = person.DateB.Value.ToLongDateString();
 
             // roles count

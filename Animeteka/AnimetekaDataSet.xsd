@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="AnimetekaDataSet" targetNamespace="http://tempuri.org/AnimetekaDataSet.xsd" xmlns:mstns="http://tempuri.org/AnimetekaDataSet.xsd" xmlns="http://tempuri.org/AnimetekaDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="AnimetekaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="AnimetekaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Animeteka.Properties.Settings.GlobalReference.Default.AnimetekaConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Anime_Genre_ViewTableAdapter" GeneratorDataComponentClassName="Anime_Genre_ViewTableAdapter" Name="Anime_Genre_View" UserDataComponentName="Anime_Genre_ViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="AnimetekaConnectionString (Settings)" DbObjectName="Animeteka.dbo.Anime_Genre_View" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT anime_id, genre_name FROM dbo.Anime_Genre_View</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="anime_id" DataSetColumn="anime_id" />
+              <Mapping SourceColumn="genre_name" DataSetColumn="genre_name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="AnimetekaDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="AnimetekaDataSet" msprop:Generator_UserDSName="AnimetekaDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Anime_Genre_View" msprop:Generator_TableClassName="Anime_Genre_ViewDataTable" msprop:Generator_TableVarName="tableAnime_Genre_View" msprop:Generator_TablePropName="Anime_Genre_View" msprop:Generator_RowDeletingName="Anime_Genre_ViewRowDeleting" msprop:Generator_RowChangingName="Anime_Genre_ViewRowChanging" msprop:Generator_RowEvHandlerName="Anime_Genre_ViewRowChangeEventHandler" msprop:Generator_RowDeletedName="Anime_Genre_ViewRowDeleted" msprop:Generator_UserTableName="Anime_Genre_View" msprop:Generator_RowChangedName="Anime_Genre_ViewRowChanged" msprop:Generator_RowEvArgName="Anime_Genre_ViewRowChangeEvent" msprop:Generator_RowClassName="Anime_Genre_ViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="anime_id" msprop:Generator_ColumnVarNameInTable="columnanime_id" msprop:Generator_ColumnPropNameInRow="anime_id" msprop:Generator_ColumnPropNameInTable="anime_idColumn" msprop:Generator_UserColumnName="anime_id" type="xs:int" minOccurs="0" />
+              <xs:element name="genre_name" msprop:Generator_ColumnVarNameInTable="columngenre_name" msprop:Generator_ColumnPropNameInRow="genre_name" msprop:Generator_ColumnPropNameInTable="genre_nameColumn" msprop:Generator_UserColumnName="genre_name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

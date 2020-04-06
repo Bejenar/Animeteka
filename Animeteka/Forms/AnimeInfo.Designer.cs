@@ -269,6 +269,7 @@
             this.Name = "AnimeInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AnimeOnly";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AnimeInfo_KeyDown);
             this.panelAnime.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

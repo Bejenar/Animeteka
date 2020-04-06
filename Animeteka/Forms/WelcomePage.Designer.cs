@@ -29,18 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WelcomePage));
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
-            this.pictureBoxAnime = new System.Windows.Forms.PictureBox();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WelcomePage));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.языкToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.русскийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.английскийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.日本語ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.количествоПроизведенийКонкретногоЖанраToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelAnime = new System.Windows.Forms.Panel();
             this.panelButtonAnime = new System.Windows.Forms.Panel();
             this.buttonAnime = new System.Windows.Forms.Button();
+            this.pictureBoxAnime = new System.Windows.Forms.PictureBox();
             this.bunifuTransition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelButtonCompany = new System.Windows.Forms.Panel();
@@ -55,10 +58,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.bunifuTransition2 = new BunifuAnimatorNS.BunifuTransition(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAnime)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.panelAnime.SuspendLayout();
             this.panelButtonAnime.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAnime)).BeginInit();
             this.panel1.SuspendLayout();
             this.panelButtonCompany.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -70,22 +73,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBoxAnime
-            // 
-            resources.ApplyResources(this.pictureBoxAnime, "pictureBoxAnime");
-            this.bunifuTransition1.SetDecoration(this.pictureBoxAnime, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition2.SetDecoration(this.pictureBoxAnime, BunifuAnimatorNS.DecorationType.None);
-            this.pictureBoxAnime.Image = global::Animeteka.Properties.Resources.yoko;
-            this.pictureBoxAnime.Name = "pictureBoxAnime";
-            this.pictureBoxAnime.TabStop = false;
-            this.pictureBoxAnime.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
-            // 
             // toolStrip1
             // 
             this.bunifuTransition2.SetDecoration(this.toolStrip1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this.toolStrip1, BunifuAnimatorNS.DecorationType.None);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripDropDownButton1});
+            this.toolStripDropDownButton1,
+            this.toolStripDropDownButton2});
             resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Name = "toolStrip1";
             // 
@@ -101,12 +95,15 @@
             // 
             this.языкToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.русскийToolStripMenuItem,
-            this.английскийToolStripMenuItem});
+            this.английскийToolStripMenuItem,
+            this.日本語ToolStripMenuItem});
             this.языкToolStripMenuItem.Name = "языкToolStripMenuItem";
             resources.ApplyResources(this.языкToolStripMenuItem, "языкToolStripMenuItem");
             // 
             // русскийToolStripMenuItem
             // 
+            this.русскийToolStripMenuItem.Checked = true;
+            this.русскийToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.русскийToolStripMenuItem.Name = "русскийToolStripMenuItem";
             resources.ApplyResources(this.русскийToolStripMenuItem, "русскийToolStripMenuItem");
             this.русскийToolStripMenuItem.Click += new System.EventHandler(this.русскийToolStripMenuItem_Click);
@@ -116,6 +113,26 @@
             this.английскийToolStripMenuItem.Name = "английскийToolStripMenuItem";
             resources.ApplyResources(this.английскийToolStripMenuItem, "английскийToolStripMenuItem");
             this.английскийToolStripMenuItem.Click += new System.EventHandler(this.английскийToolStripMenuItem_Click);
+            // 
+            // 日本語ToolStripMenuItem
+            // 
+            this.日本語ToolStripMenuItem.Name = "日本語ToolStripMenuItem";
+            resources.ApplyResources(this.日本語ToolStripMenuItem, "日本語ToolStripMenuItem");
+            this.日本語ToolStripMenuItem.Click += new System.EventHandler(this.日本語ToolStripMenuItem_Click);
+            // 
+            // toolStripDropDownButton2
+            // 
+            this.toolStripDropDownButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.количествоПроизведенийКонкретногоЖанраToolStripMenuItem});
+            resources.ApplyResources(this.toolStripDropDownButton2, "toolStripDropDownButton2");
+            this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
+            // 
+            // количествоПроизведенийКонкретногоЖанраToolStripMenuItem
+            // 
+            this.количествоПроизведенийКонкретногоЖанраToolStripMenuItem.Name = "количествоПроизведенийКонкретногоЖанраToolStripMenuItem";
+            resources.ApplyResources(this.количествоПроизведенийКонкретногоЖанраToolStripMenuItem, "количествоПроизведенийКонкретногоЖанраToolStripMenuItem");
+            this.количествоПроизведенийКонкретногоЖанраToolStripMenuItem.Click += new System.EventHandler(this.количествоПроизведенийКонкретногоЖанраToolStripMenuItem_Click);
             // 
             // panelAnime
             // 
@@ -145,26 +162,36 @@
             this.buttonAnime.UseVisualStyleBackColor = true;
             this.buttonAnime.Click += new System.EventHandler(this.button_advanced_Click);
             // 
+            // pictureBoxAnime
+            // 
+            resources.ApplyResources(this.pictureBoxAnime, "pictureBoxAnime");
+            this.bunifuTransition1.SetDecoration(this.pictureBoxAnime, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransition2.SetDecoration(this.pictureBoxAnime, BunifuAnimatorNS.DecorationType.None);
+            this.pictureBoxAnime.Image = global::Animeteka.Properties.Resources.yoko;
+            this.pictureBoxAnime.Name = "pictureBoxAnime";
+            this.pictureBoxAnime.TabStop = false;
+            this.pictureBoxAnime.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
+            // 
             // bunifuTransition1
             // 
             this.bunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
             this.bunifuTransition1.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.bunifuTransition1.DefaultAnimation = animation1;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.bunifuTransition1.DefaultAnimation = animation2;
             // 
             // panel1
             // 
@@ -282,29 +309,28 @@
             // 
             this.bunifuTransition2.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
             this.bunifuTransition2.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 1;
-            animation2.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 2F;
-            animation2.TransparencyCoeff = 0F;
-            this.bunifuTransition2.DefaultAnimation = animation2;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 1;
+            animation1.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 2F;
+            animation1.TransparencyCoeff = 0F;
+            this.bunifuTransition2.DefaultAnimation = animation1;
             // 
             // WelcomePage
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::Animeteka.Properties.Resources.login_bg;
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -313,12 +339,13 @@
             this.bunifuTransition1.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.Name = "WelcomePage";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.WelcomePage_FormClosed);
             this.MouseEnter += new System.EventHandler(this.WelcomePage_MouseEnter);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAnime)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panelAnime.ResumeLayout(false);
             this.panelButtonAnime.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAnime)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panelButtonCompany.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -358,5 +385,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
+        private System.Windows.Forms.ToolStripMenuItem количествоПроизведенийКонкретногоЖанраToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 日本語ToolStripMenuItem;
     }
 }

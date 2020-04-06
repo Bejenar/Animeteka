@@ -20,7 +20,33 @@ namespace Animeteka
             db = new AnimetekaContext();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdvancedSearch());
+            new AdvancedSearch().Show();
+            Application.Run();
+        }
+
+        public static void CloseAllButSearch()
+        {
+            try
+            {
+                foreach (Form form in Application.OpenForms)
+                {
+                    Console.WriteLine(form.Name);
+                    if (form.Name == "AdvancedSearch")
+                        form.Show();
+                    else if (form.Name != "WelcomePage" && form.Name != "Authorization")
+                    {
+                        form.Close();                      
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
         }
     }
 }

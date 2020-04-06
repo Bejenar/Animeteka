@@ -18,23 +18,22 @@ namespace Animeteka.Forms
         {
             InitializeComponent();
 
-            var roles = Program.db.CharacterAnime
-                    .Include(ca => ca.Anime)
-                    .Include(ca => ca.Character)
-                    .Where(p => p.PersonId == 65)
-                    .AsEnumerable()
-                    .GroupBy(ca => ca.CharacterId)
-                    .ToList();
-
-            foreach(var c in roles)
-            {
-                flowLayoutPanel1.Controls.Add(new CharacterInAnimes(c));
-            }
         }
 
         private void customCheckBox2_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "animetekaDataSet3.Anime_Genre_View". При необходимости она может быть перемещена или удалена.
+            this.anime_Genre_ViewTableAdapter.Fill(this.animetekaDataSet3.Anime_Genre_View);
+
+
+            this.reportViewer1.RefreshReport();
+            this.reportViewer1.RefreshReport();
+            this.reportViewer1.RefreshReport();
         }
     }
 }

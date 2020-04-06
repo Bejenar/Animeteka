@@ -108,6 +108,7 @@ namespace Animeteka.Forms
                                               adsControl.Status_airing.Checked ? (a.ReleaseDate == null && a.AirDate < DateTime.Now) :
                                               true) : true)
                 )
+                .OrderByDescending(a => a.AirDate)
                 .AsEnumerable()
                 .Where(a => adsControl.Genre_check.Checked ? CheckGenre(a, agenres) : true);
 
@@ -119,8 +120,9 @@ namespace Animeteka.Forms
             BeginInvoke(new MethodInvoker(delegate
             {
                 progressBar.Visible = true;
-                progressBar.Value = 0;
+                progressBar.Value = 5;
                 pageIndex = 0;
+                button_search.Enabled = false;
             }));
 
             animeEntries = GetAnimes();
@@ -138,7 +140,10 @@ namespace Animeteka.Forms
                 progressBar.Visible = true;
                 progressBar.Value = 0;
                 label1.Text = (pageIndex + 1) + "/" + pages;
-
+                panelPage.Visible = true;
+                button1.Enabled = false;
+                button2.Enabled = false;
+                button_search.Enabled = false;
             }));
 
             var animes = animeEntries.Skip(pageIndex * entriesPerPage).Take(entriesPerPage);
@@ -172,6 +177,9 @@ namespace Animeteka.Forms
             BeginInvoke(new MethodInvoker(delegate
             {
                 progressBar.Visible = false;
+                button1.Enabled = true;
+                button2.Enabled = true;
+                button_search.Enabled = true;
             }));
         }
 

@@ -17,6 +17,7 @@ namespace Animeteka
         public AnimetekaContext(DbContextOptions<AnimetekaContext> options)
             : base(options)
         {
+            Database.SetCommandTimeout(9000);
         }
 
         public virtual DbSet<Anime> Anime { get; set; }

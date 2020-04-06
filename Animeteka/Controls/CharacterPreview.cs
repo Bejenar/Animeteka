@@ -39,7 +39,17 @@ namespace Animeteka.Controls
             var frm = new CharacterInfo(character);
             frm.Location = this.ParentForm.Location;
             frm.StartPosition = FormStartPosition.Manual;
-            frm.FormClosing += delegate { this.ParentForm.Show(); };
+            frm.FormClosing += delegate { frm.Dispose(); Program.CloseAllButSearch(); };
+            frm.KeyDown += new KeyEventHandler((s, key) =>
+            {
+                if (key.KeyCode == Keys.X)
+                {
+                    Console.WriteLine("key pressed");
+                    this.FindForm().Show();
+                    frm.Close();
+                    frm.Dispose();
+                }
+            });
             frm.Show();
             this.ParentForm.Hide();
         }

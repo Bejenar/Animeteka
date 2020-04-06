@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdvancedSearch));
             this.panelFilter = new System.Windows.Forms.Panel();
+            this.adsControl = new Animeteka.Controls.AdvancedSearchControl();
             this.panelEntry = new System.Windows.Forms.Panel();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.panelHeaderDiv = new System.Windows.Forms.Panel();
@@ -40,10 +41,9 @@
             this.AsyncWorker = new System.ComponentModel.BackgroundWorker();
             this.LoadPage = new System.ComponentModel.BackgroundWorker();
             this.panelPage = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.adsControl = new Animeteka.Controls.AdvancedSearchControl();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelFilter.SuspendLayout();
             this.panelHeader.SuspendLayout();
             this.panelHeaderDiv.SuspendLayout();
@@ -61,6 +61,15 @@
             this.panelFilter.Name = "panelFilter";
             this.panelFilter.Size = new System.Drawing.Size(240, 442);
             this.panelFilter.TabIndex = 10;
+            // 
+            // adsControl
+            // 
+            this.adsControl.BackColor = System.Drawing.Color.Transparent;
+            this.adsControl.Dock = System.Windows.Forms.DockStyle.Right;
+            this.adsControl.Location = new System.Drawing.Point(0, 0);
+            this.adsControl.Name = "adsControl";
+            this.adsControl.Size = new System.Drawing.Size(240, 442);
+            this.adsControl.TabIndex = 9;
             // 
             // panelEntry
             // 
@@ -188,16 +197,15 @@
             this.panelPage.Name = "panelPage";
             this.panelPage.Size = new System.Drawing.Size(708, 35);
             this.panelPage.TabIndex = 0;
+            this.panelPage.Visible = false;
             // 
-            // button1
+            // label1
             // 
-            this.button1.Location = new System.Drawing.Point(398, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Вперёд";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(334, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 2;
             // 
             // button2
             // 
@@ -209,22 +217,15 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label1
+            // button1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(334, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
-            this.label1.TabIndex = 2;
-            // 
-            // adsControl
-            // 
-            this.adsControl.BackColor = System.Drawing.Color.Transparent;
-            this.adsControl.Dock = System.Windows.Forms.DockStyle.Right;
-            this.adsControl.Location = new System.Drawing.Point(0, 0);
-            this.adsControl.Name = "adsControl";
-            this.adsControl.Size = new System.Drawing.Size(240, 442);
-            this.adsControl.TabIndex = 9;
+            this.button1.Location = new System.Drawing.Point(398, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Вперёд";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // AdvancedSearch
             // 

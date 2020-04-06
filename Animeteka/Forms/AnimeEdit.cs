@@ -19,15 +19,12 @@ namespace Animeteka.Forms
             InitializeComponent();
         }
 
-        public AnimeEdit(Anime anime)
+        private void InitializeEdit()
         {
-            InitializeComponent();
-
-            this.anime = anime;
-
             textBox1.Text = anime.AnimeName;
             textBox2.Text = anime.AnimeNameEn;
 
+            comboBox1.Items.Clear();
             var types = Program.db.AnimeType.ToList();
             foreach (var t in types)
             {
@@ -35,24 +32,41 @@ namespace Animeteka.Forms
                 if (t.AtypeId == anime.AtypeId)
                     comboBox1.SelectedItem = comboBox1.Items[comboBox1.Items.Count - 1];
             }
-             
 
+            comboBox2.Items.Clear();
             var studios = Program.db.Studio.ToList();
             foreach (var s in studios)
             {
                 comboBox2.Items.Add(s);
-                if(s.StudioId == anime.StudioId)
+                if (s.StudioId == anime.StudioId)
                     comboBox2.SelectedItem = comboBox2.Items[comboBox2.Items.Count - 1];
             }
 
-            dateTimePicker1.Value = (DateTime)anime.AirDate;
-            if(anime.ReleaseDate != null)
-            dateTimePicker2.Value = (DateTime)anime.ReleaseDate;
-            textBox7.Text += anime.EpDuration;
-            textBox8.Text += anime.EpCount;
-            textBox9.Text += anime.EpAired;
-            textBox10.Text += anime.AnimeUrl;
+            checkedListBox1.Items.Clear();
+            var genres = Program.db.Genre.ToList();
+            var selectedGenres = Program.db.AnimeAndGenre.Where(a => a.AnimeId == anime.AnimeId).Select(g => g.Genre).ToList();
+            foreach (var g in genres)
+            {
+                checkedListBox1.Items.Add(g, selectedGenres.Contains(g) ? true : false);
+            }
 
+            dateTimePicker1.Value = (DateTime)anime.AirDate;
+            if (anime.ReleaseDate != null)
+                dateTimePicker2.Value = (DateTime)anime.ReleaseDate;
+            textBox7.Text = anime.EpDuration.ToString();
+            textBox8.Text = anime.EpCount.ToString();
+            textBox9.Text = anime.EpAired.ToString();
+            textBox10.Text = anime.AnimeUrl;
+
+        }
+
+        public AnimeEdit(Anime anime)
+        {
+            InitializeComponent();
+
+            this.anime = anime;
+
+            InitializeEdit();        
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -68,7 +82,23 @@ namespace Animeteka.Forms
             anime.EpAired = (short)Convert.ToInt32(textBox9.Text);
             anime.AnimeUrl = textBox10.Text;
 
+            var animeAndGenre = new List<AnimeAndGenre>();
+            foreach(Genre g in checkedListBox1.CheckedItems)
+            {
+                var ag = new AnimeAndGenre() { AnimeId = anime.AnimeId, Anime = anime, Genre = g, GenreId = g.GenreId };
+                animeAndGenre.Add(ag);
+            }
+            Program.db.AnimeAndGenre.RemoveRange(anime.AnimeAndGenre);
+            Program.db.AnimeAndGenre.AddRange(animeAndGenre);
+            Program.db.SaveChanges();
             Program.db.Anime.Update(anime);
+
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            InitializeEdit();
         }
     }
 }

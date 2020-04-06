@@ -93,12 +93,20 @@ namespace Animeteka.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var frm = new Piko();
+            var frm = new DownloadTorrent(anime);
             frm.Location = this.Location;
             frm.StartPosition = FormStartPosition.Manual;
             frm.FormClosing += delegate { this.Show(); };
             frm.Show();
             this.Hide();
+        }
+
+        private void AnimeInfo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.X)
+            {
+                Console.WriteLine("key pressed");
+            }
         }
     }
 }

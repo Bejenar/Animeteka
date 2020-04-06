@@ -57,7 +57,6 @@
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = global::Animeteka.Properties.Resources.placeholder;
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
@@ -127,9 +126,8 @@
             this.year.Location = new System.Drawing.Point(0, 122);
             this.year.Name = "year";
             this.year.Padding = new System.Windows.Forms.Padding(5, 0, 0, 10);
-            this.year.Size = new System.Drawing.Size(95, 28);
+            this.year.Size = new System.Drawing.Size(5, 28);
             this.year.TabIndex = 2;
-            this.year.Text = "Год: 2009";
             // 
             // type
             // 
